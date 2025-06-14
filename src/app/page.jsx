@@ -1,0 +1,50 @@
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+
+import { FaMapMarkerAlt } from "react-icons/fa";
+import Img1 from "@/assets/11-2.png"
+
+export default function Home() {
+  return (
+    <React.Fragment>
+      <header className="w-full min-h-screen overflow-hidden">
+        <video className="absolute z-10 top-0 w-full h-auto" autoPlay muted playsInline loop>
+          <source src="/Horizontal-Baklava.mp4" type="video/mp4" />
+        </video>
+        {/* <svg id="wave" className='absolute z-20 -bottom-1/6' style={{transform:"rotate(0deg)", transition: "0.3s"}} viewBox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stopColor="rgba(62, 144.9, 243, 1)" offset="0%"></stop><stop stopColor="rgba(89.745, 235.613, 246.213, 1)" offset="100%"></stop></linearGradient></defs><path style={{transform:"translate(0, 0px)", opacity:"1"}} fill="url(#sw-gradient-0)" d="M0,20L26.7,30C53.3,40,107,60,160,56.7C213.3,53,267,27,320,23.3C373.3,20,427,40,480,43.3C533.3,47,587,33,640,26.7C693.3,20,747,20,800,25C853.3,30,907,40,960,50C1013.3,60,1067,70,1120,73.3C1173.3,77,1227,73,1280,61.7C1333.3,50,1387,30,1440,23.3C1493.3,17,1547,23,1600,35C1653.3,47,1707,63,1760,63.3C1813.3,63,1867,47,1920,45C1973.3,43,2027,57,2080,56.7C2133.3,57,2187,43,2240,35C2293.3,27,2347,23,2400,20C2453.3,17,2507,13,2560,21.7C2613.3,30,2667,50,2720,55C2773.3,60,2827,50,2880,46.7C2933.3,43,2987,47,3040,46.7C3093.3,47,3147,43,3200,48.3C3253.3,53,3307,67,3360,63.3C3413.3,60,3467,40,3520,26.7C3573.3,13,3627,7,3680,16.7C3733.3,27,3787,53,3813,66.7L3840,80L3840,100L3813.3,100C3786.7,100,3733,100,3680,100C3626.7,100,3573,100,3520,100C3466.7,100,3413,100,3360,100C3306.7,100,3253,100,3200,100C3146.7,100,3093,100,3040,100C2986.7,100,2933,100,2880,100C2826.7,100,2773,100,2720,100C2666.7,100,2613,100,2560,100C2506.7,100,2453,100,2400,100C2346.7,100,2293,100,2240,100C2186.7,100,2133,100,2080,100C2026.7,100,1973,100,1920,100C1866.7,100,1813,100,1760,100C1706.7,100,1653,100,1600,100C1546.7,100,1493,100,1440,100C1386.7,100,1333,100,1280,100C1226.7,100,1173,100,1120,100C1066.7,100,1013,100,960,100C906.7,100,853,100,800,100C746.7,100,693,100,640,100C586.7,100,533,100,480,100C426.7,100,373,100,320,100C266.7,100,213,100,160,100C106.7,100,53,100,27,100L0,100Z"></path></svg> */}
+      </header>
+      <main className="container mx-auto my-16">
+        <p className="mt-10 ml-1/12 text-center text-6xl font-bold text-indigo-600">Weekly Creations</p>
+        <p className="my-8 text-center p-2 rounded-3xl bg-indigo-400 max-w-xs mx-auto font-semibold text-lg">☑ Week Of May 12th To 18th</p>
+        <div className="group mx-auto px-10 max-w-5xl max-h-64 rounded-3xl flex flex-row items-center justify-between hover:bg-cyan-600 transition duration-300 ease-in">
+          <Image src={Img1} className="h-96 w-auto" alt="ki6u na" />
+          <div className='items-center-safe pr-5'>
+            <p className="text-6xl font-semibold group-hover:text-white transition duration-300 ease-in">Strawberry Cake</p>
+            <span className='flex flex-row space-x-5 mt-5'>
+              <button className="px-3 py-1 rounded-2xl group-hover:border group-hover:border-indigo-800 group-hover:translate-x-5 transition duration-300">Learn more</button>
+              <button className="px-3 py-1 rounded-2xl group-hover:border group-hover:border-indigo-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-indigo-900 group-hover:text-white">Order Now</button>
+            </span>
+          </div>
+        </div>
+
+        <p className="mt-24 ml-1/12 text-center text-6xl font-bold text-indigo-600">Yia Yia's Classic</p>
+        <p className="flex flex-row items-center my-8 text-center p-2 rounded-3xl underline underline-offset-4 decoration-indigo-400 max-w-xs mx-auto font-semibold text-lg"><FaMapMarkerAlt className='fill-cyan-700' /> <span>Visit Your Local Store Near You</span></p>
+        <div className="group mx-auto px-10 max-w-5xl max-h-64 rounded-3xl flex flex-row items-center justify-between hover:bg-cyan-600 transition duration-300 ease-in">
+          <Image src={Img1} className="h-96 w-auto" alt="ki6u na" />
+          <div className='items-center-safe pr-5'>
+            <p className="text-6xl font-semibold group-hover:text-white transition duration-300 ease-in">Strawberry Cake</p>
+            <span className='flex flex-row space-x-5 mt-5'>
+              <button className="px-3 py-1 rounded-2xl group-hover:border group-hover:border-indigo-800 group-hover:translate-x-5 transition duration-300">Learn more</button>
+              <button className="px-3 py-1 rounded-2xl group-hover:border group-hover:border-indigo-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-indigo-900 group-hover:text-white">Order Now</button>
+            </span>
+          </div>
+        </div>
+        <div className='max-w-5xl mx-auto mt-24'>
+          <Link href="#" className='inline-block w-full h-full px-10 py-4 font-semibold border border-blue-500 rounded-full'>EXPLORE NUTRITIONAL VALUE</Link>
+        </div>
+      </main>
+    </React.Fragment>
+  );
+}

@@ -1,0 +1,8 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#d4a676"/>
+  <circle cx="400" cy="400" r="300" fill="#8b4513"/>
+  <circle cx="400" cy="400" r="250" fill="#ffffff"/>
+  <path d="M300,300 L500,300 L400,500 Z" fill="#4a235a"/>
+  <rect x="300" y="350" width="200" height="100" fill="#795548"/>
+  <text x="400" y="400" font-family="Arial" font-size="48" fill="#8b4513" text-anchor="middle">S'mores Cookie</text>
+</svg>

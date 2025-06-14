@@ -1,0 +1,7 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#f1c40f"/>
+  <circle cx="400" cy="400" r="300" fill="#e74c3c"/>
+  <circle cx="400" cy="400" r="250" fill="#f39c12"/>
+  <path d="M300,300 Q400,200 500,300 T400,500" fill="#c0392b"/>
+  <text x="400" y="400" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Lemon Raspberry</text>
+</svg>
