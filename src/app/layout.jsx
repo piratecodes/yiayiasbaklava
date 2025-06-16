@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "@/style/globals.css";
 import Nav from "@/componant/nav";
 import Footer from "@/componant/footer";
@@ -6,15 +6,11 @@ import Footer from "@/componant/footer";
 //Redux Provider for state Management
 import Providers from "./provider"
 
-const geistSans = Geist({
+const poppins = Poppins({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "400"
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: {
@@ -28,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${poppins.variable} antialiased scroll-smooth`}>
         <Providers>
           <Nav />
           {children}

@@ -1,21 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import img from "@/assets/logo.png"
+
 export default function Footer() {
   return (
-    <footer className="bg-[#2B2B2B] text-white">
+    <footer className="bg-cyan-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block">
-              <Image
-                src="/yiayiasbaklava.webp"
-                alt="Yia Yia's Baklava"
-                width={200}
-                height={15}
-                className="brightness-0 invert"
-              />
+              <Image src={img} alt="Yia Yia's Baklava" className="brightness-0 invert h-6 w-auto" />
             </Link>
             <p className="mt-4 text-gray-400">
               Experience the authentic taste of homemade baklava, crafted with love and tradition.

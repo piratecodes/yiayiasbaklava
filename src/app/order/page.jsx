@@ -3,12 +3,12 @@ import { Truck, Store, CreditCard, UtensilsCrossed } from 'lucide-react';
 export default function StartOrderPage() {
   return (
     <div className="min-h-screen p-6">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Start an Order</h1>
+      <div className="container mx-auto">
+        <h1 className="text-4xl lg:text-6xl text-center font-bold text-slate-900 mb-8">Start an Order</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Delivery Card */}
-          <div className="bg-blue-400 rounded-3xl p-8 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="bg-cyan-100 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <div className="w-24 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-2">
@@ -20,7 +20,7 @@ export default function StartOrderPage() {
           </div>
 
           {/* Pickup Card */}
-          <div className="bg-blue-400 rounded-3xl p-8 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="bg-cyan-100 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <div className="relative">
@@ -42,7 +42,7 @@ export default function StartOrderPage() {
           </div>
 
           {/* Digital Gift Cards */}
-          <div className="rounded-3xl p-8 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <CreditCard className="w-16 h-16 text-gray-700" />
@@ -52,7 +52,7 @@ export default function StartOrderPage() {
           </div>
 
           {/* Catering */}
-          <div className="rounded-3xl p-8 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <UtensilsCrossed className="w-16 h-16 text-gray-700" />

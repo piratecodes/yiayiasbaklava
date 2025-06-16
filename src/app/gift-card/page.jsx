@@ -16,7 +16,7 @@ export default function GiftCardTemplate() {
 
   return (
     <div className="container mx-auto p-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-screen pt-20">
         {/* Left side - Gift Card Image */}
         <div className="relative">
           <div className="absolute top-4 right-4 z-10">
