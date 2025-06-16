@@ -10,9 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="inline-block">
-              <Image src={img} alt="Yia Yia's Baklava" className="brightness-0 invert h-6 w-auto" />
-            </Link>
+            <h6 className='text-2xl font-bold'>Handmade Healthy & Yummi</h6>
             <p className="mt-4 text-gray-400">
               Experience the authentic taste of homemade baklava, crafted with love and tradition.
             </p>

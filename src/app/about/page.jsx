@@ -28,7 +28,7 @@ export default function About(){
                     </div>
                     </div>
 
-                    <div ariaHidden="true"></div>
+                    <div aria-hidden="true"></div>
                 </li> */}
 
                 <li className="group relative grid grid-cols-2 odd:-me-3 even:-ms-3">
@@ -45,7 +45,7 @@ export default function About(){
                     </div>
                     </div>
 
-                    <div ariaHidden="true"></div>
+                    <div aria-hidden="true"></div>
                 </li>
 
                 <li className="group relative grid grid-cols-2 odd:-me-3 even:-ms-3">
@@ -65,7 +65,7 @@ export default function About(){
                     </div>
                     </div>
 
-                    <div ariaHidden="true"></div>
+                    <div aria-hidden="true"></div>
                 </li>
             </ol>
             {/* <video className="w-96 h-auto mx-auto" src="https://yiayiasbaklava.com/wp-content/uploads/2023/12/Yia-Yias-Baklava-Homemade-Baklava-Order-Now.mp4" controls="" preload="metadata" muted="muted" controlslist="nodownload" poster="https://yiayiasbaklava.com/wp-content/uploads/2023/12/IMG-20231215-WA0003.jpg"></video> */}

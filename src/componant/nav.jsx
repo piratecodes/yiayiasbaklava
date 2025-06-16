@@ -95,7 +95,7 @@ export default function Nav() {
               Download App
             </Link>
             <Link
-              href="/order-now"
+              href="/order"
               className={`inline-flex items-center px-4 py-2 text-md font-medium hover:text-gray-60 rounded-4xl transform transition-colors ease-in ${scrollPosition > 50 ? 'bg-cyan-900/75 text-white' : 'bg-transparent text-gray-800'}`}
             >
               <svg className="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512">
@@ -107,7 +107,7 @@ export default function Nav() {
         </div>
 
       </div>
-      <aside ref={ref3} className='absolute inset-y-0 flex flex-col w-full h-screen z-30 md:w-4/6 lg:w-1/4 bg-cyan-900/95 rounded-r-4xl transition ease-linear duration-300 -translate-x-full'>
+      <aside ref={ref3} className='absolute inset-y-0 flex flex-col w-full h-screen z-30 md:w-4/6 lg:w-1/4 bg-cyan-900/95 md:rounded-r-4xl transition ease-linear duration-300 -translate-x-full'>
         <div className='flex justify-between h-10 w-11/12 my-4 mx-auto'>
           <span><Link href="/login" className='font-bold text-2xl text-white' >Sign In</Link> </span>
           <span><button aria-label="Close Cart" title="Close Cart" className="focus:shadow-outline -mr-1 rounded-full p-2 transition duration-200 hover:bg-deep-purple-50 hover:bg-opacity-30 bg-white" onClick={() => toogleMenu()}><GrClose className="w-5 text-lg text-black" /></button></span>
@@ -115,12 +115,12 @@ export default function Nav() {
         <hr className='border border-gray-400 my-1 w-11/12 mx-auto ' />
         <ol className='mt-5 space-y-6 text-white font-bold text-4xl w-11/12 mx-auto'>
           <li><Link href="/" onClick={handleMenuClick}>Home</Link></li>
+          <li><Link href="/about" onClick={handleMenuClick}>About</Link></li>
           <li><Link href="/order" onClick={handleMenuClick}>Order</Link></li>
-          <li><Link href="/location" onClick={handleMenuClick}>Location</Link></li>
           <li><Link href="/catering" onClick={handleMenuClick}>Catering</Link></li>
           <li><Link href="/gift-card" onClick={handleMenuClick}>Gift Cards</Link></li>
           <li><Link href="/loyality" onClick={handleMenuClick}>Loyality</Link></li>
-          <li><Link href="/about" onClick={handleMenuClick}>About</Link></li>
+          <li><Link href="/nutrition" onClick={handleMenuClick}>Nutrition</Link></li>
           <li className="flex flex-row space-x-1.5 lg:hidden">
             <Link
               href="#"
