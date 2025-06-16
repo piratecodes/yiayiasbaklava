@@ -7,9 +7,9 @@ import Footer from "@/componant/footer";
 import Providers from "./provider"
 
 const poppins = Poppins({
-  variable: "--font-geist-sans",
-  weight: "400"
-});
+  weight: '400',
+  subsets: ['latin'],
+})
 
 
 export const metadata = {
@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased scroll-smooth`}>
+      <body className={`${poppins.className} antialiased scroll-smooth`}>
         <Providers>
           <Nav />
           {children}
