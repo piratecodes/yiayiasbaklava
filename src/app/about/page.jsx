@@ -20,7 +20,7 @@ export default function About(){
                         <time className="text-xs/none font-medium text-gray-700">2021</time>
 
                         <h3 className="text-lg font-bold text-gray-900">One Big Dream</h3>
-                        <Image className="w-auto h-96" src={img1} alt="big dream" draggable="false"/>
+                        <Image className="h-auto w-40 lg:w-auto lg:h-96" src={img1} alt="big dream" draggable="false"/>
                     </div>
                     </div>
 
@@ -38,8 +38,8 @@ export default function About(){
 
                         <h3 className="text-lg font-bold text-gray-900">Who Is Yia Yia?</h3>
                         <div className="bg-gray-300/50 rounded-b-xl">
-                            <Image className="w-96 h-auto" src={img2} alt="big dream" draggable="false"/>
-                            <p className="px-2.5 py-1.5 mt-2.5 w-96 text-justify">My mother, Christine, has a passion for baking that began in her childhood at just 5 years old. She learned recipes passed down from generations in our family, with a legacy of over 125 years. Baklava has been a staple dessert for all special moments, from family gatherings to weddings, and it’s always been a centerpiece of our family celebrations. After I was diagnosed with severe dyslexia at a young age my mother took it upon herself to find a way to pay for the very expensive ,and much needed, tutoring I needed. She began selling Greek delicacies, Baklava was her staple</p>
+                            <Image className="h-auto w-40 lg:w-96 lg:h-auto" src={img2} alt="big dream" draggable="false"/>
+                            <p className="px-2.5 py-1.5 mt-2.5 w-40 lg:w-96 text-left lg:text-justify">My mother, Christine, has a passion for baking that began in her childhood at just 5 years old. She learned recipes passed down from generations in our family, with a legacy of over 125 years. Baklava has been a staple dessert for all special moments, from family gatherings to weddings, and it’s always been a centerpiece of our family celebrations. After I was diagnosed with severe dyslexia at a young age my mother took it upon herself to find a way to pay for the very expensive ,and much needed, tutoring I needed. She began selling Greek delicacies, Baklava was her staple</p>
                         </div>
                     </div>
                     </div>
@@ -48,7 +48,7 @@ export default function About(){
                 </li>
             </ol>
             
-            <video className="w-7/12 h-auto mx-auto my-16 rounded-2xl" controls muted playsInline loop poster="/poster-balkava.jpg">
+            <video className="w-4/5 lg:w-7/12 h-auto mx-auto my-16 rounded-2xl" controls muted playsInline loop poster="/poster-balkava.jpg">
                 <source src="/baklava.mp4" type="video/mp4" />
             </video>
             

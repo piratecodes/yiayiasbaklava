@@ -3,3 +3,7 @@
 @utility container {
     margin-inline: auto;
 }
+
+html {
+  scroll-behavior: smooth; /* This makes all native link clicks smooth */
+}

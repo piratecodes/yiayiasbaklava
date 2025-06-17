@@ -79,7 +79,7 @@ export default function Nav() {
           </button>
 
           {/* Logo */}
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center pl-3.5 lg:pl-0">
             <Link href="/" className="flex items-center"> <Image src={logo} alt="Yia Yia's Baklava" width={539} height={39} className="h-10 w-auto" /> </Link>
           </div>
 

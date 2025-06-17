@@ -6,12 +6,12 @@ import img1 from '@/assets/hazelnut.png'
 export default function Option(){
 
     return(
-        <section className='py-16 px-4 sm:px-6 lg:px-8 bg-white'>
-            <h2 className="text-4xl lg:text-5xl text-center font-bold text-slate-800 mb-6">
+        <section id="options" className='py-16 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-8'>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-center font-bold text-slate-800 mb-6">
                 Our Catering Options
             </h2>
             
-            <p className="text-lg text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-md lg:text-lg text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
                 From intimate office gatherings to large-scale corporate galas, Yia Yia Baklava offers flexible catering solutions that fit your event style, guest count, and taste preferences.
             </p>
             

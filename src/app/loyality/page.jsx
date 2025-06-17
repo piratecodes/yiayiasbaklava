@@ -29,11 +29,11 @@ export default function LoyaltyPointsBanner() {
             
             {/* Main Content */}
             <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px] px-6 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Earn Points. Get <span className="text-amber-300">FREE</span> Treats
                 </h1>
                 
-                <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-4xl leading-relaxed">
+                <p className="text-lg lg:text-xl text-slate-200 mb-8 max-w-4xl leading-relaxed">
                 Collect 100 points to get a free 2-pack of baklava. Sign up today and immediately receive 75 points!!
                 </p>
                 
@@ -46,8 +46,8 @@ export default function LoyaltyPointsBanner() {
         <section className="relative container z-10 py-12 px-6">
             <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">How It Works</h2>
-                <p className="text-lg text-slate-600 max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">How It Works</h2>
+                <p className="text-md lg:text-lg text-slate-600 max-w-4xl mx-auto">
                 Start earning points in three simple steps while enjoying the convenience of mobile ordering and quick in-store pickup.
                 </p>
             </div>
@@ -139,10 +139,10 @@ export default function LoyaltyPointsBanner() {
             </div>
         </section>
 
-        <section className="container flex my-10 px-5 py-12 md:flex-row flex-col items-center rounded-xl shadow-2xl">
+        <section className="max-w-2xl md:container mx-3.5 md:mx-auto flex my-10 px-5 py-12 md:flex-row flex-col items-center rounded-xl shadow-2xl">
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Birthday Treat</h3>
-                <p className="mb-8 leading-relaxed">Enjoy a FREE Baklava on your birthday every year! To sign up, simply visit your Yia Yias Account online.</p>
+                <h3 className="title-font text-3xl md:text-4xl lg:text-5xl mb-4 font-medium text-gray-900">Birthday Treat</h3>
+                <p className="mb-8 leading-relaxed text-md lg:text-lg">Enjoy a FREE Baklava on your birthday every year! To sign up, simply visit your Yia Yias Account online.</p>
                 <button className="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">&gt;&gt; Visit Your Account </button>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -150,21 +150,21 @@ export default function LoyaltyPointsBanner() {
             </div>
         </section>
 
-        <section className="container flex my-10 px-5 py-12 md:flex-row flex-col items-center rounded-xl shadow-2xl">
+        <section className="max-w-2xl md:container mx-3.5 md:mx-auto flex my-10 px-5 py-12 md:flex-row flex-col items-center rounded-xl shadow-2xl">
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                 <Image className="object-cover object-center rounded" alt="hero" src={img3} draggable="false" />
             </div>
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Bonus points & Double Points​</h3>
-                <p className="mb-8 leading-relaxed">Never miss a chance to earn Double Points on select days so you can get FREE treats faster!</p>
+                <h3 className="title-font text-3xl md:text-4xl lg:text-5xl mb-4 font-medium text-gray-900">Bonus points & Double Points​</h3>
+                <p className="mb-8 leading-relaxed text-md lg:text-lg">Never miss a chance to earn Double Points on select days so you can get FREE treats faster!</p>
                 <button className="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">&gt;&gt; Visit Your Account </button>
             </div>
         </section>
 
         <section className="container flex my-10 px-5 py-12 md:flex-row flex-col items-center">
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Download the Points App For the Best Experience</h3>
-                <p className="mb-8 leading-relaxed">Enjoy personalize ordering, FREE Points, birthday rewards, and more with the Points ...</p>
+                <h3 className="title-font text-3xl md:text-4xl lg:text-5xl mb-4 font-medium text-gray-900">Download the Points App For the Best Experience</h3>
+                <p className="mb-8 leading-relaxed text-md lg:text-lg">Enjoy personalize ordering, FREE Points, birthday rewards, and more with the Points ...</p>
                 <button className="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">Download Now</button>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -172,12 +172,12 @@ export default function LoyaltyPointsBanner() {
             </div>
         </section>
 
-        <h4 className='text-3xl text-center font-bold uppercase'>Using the Baklava Points</h4>
-        <section className="max-w-3xl mx-auto flex my-10 px-5 md:flex-row flex-col items-center rounded-4xl shadow-2xl shadow-cyan-900">
+        <h4 className='text-3xl md:text-4xl lg:text-5xl text-center font-bold uppercase'>Using the Baklava Points</h4>
+        <section className="mx-3.5 max-w-3xl md:mx-auto flex my-10 px-5 md:flex-row flex-col items-center rounded-4xl shadow-2xl shadow-cyan-900">
             <Image className="w-48 h-auto object-center rounded" alt="hero" src={img4} draggable="false" />
             <div className="lg:flex-grow lg:pl-16 md:pl-8 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">How to use in-store</h3>
-                <p className="mb-8 leading-relaxed">Enter your phone number at checkout OR tap in your Points card to reveal a QR code which you can scan at any Yia Yias location.</p>
+                <h3 className="title-font text-xl md:text-2xl lg:text-3xl mb-4 font-medium text-gray-900">How to use in-store</h3>
+                <p className="mb-8 leading-relaxed text-sm lg:text-md">Enter your phone number at checkout OR tap in your Points card to reveal a QR code which you can scan at any Yia Yias location.</p>
             </div>
         </section>
     </React.Fragment>

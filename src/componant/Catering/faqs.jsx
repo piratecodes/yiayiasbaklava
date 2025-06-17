@@ -16,11 +16,11 @@ export default function Catering(){
             <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* <!-- Left Content --> */}
                 <div className="relative z-10">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl text-center md:text-left font-bold text-gray-900 mb-6">
                         Frequently Asked Questions
                     </h2>
                     
-                    <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    <p className="text-md lg:text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
                         Planning an event should feel exciting, not overwhelming. So we've put together answers to the most common questions - so you can book with confidence, clarity, and zero stress.
                     </p>
                     
@@ -49,7 +49,7 @@ export default function Catering(){
                     <Disclosure as="div" className="px-4 py-2.5 bg-slate-800 rounded-xl">
                         <DisclosureButton className="group flex w-full items-center justify-between">
                             <span className="text-sm/6 font-medium text-white group-data-hover:text-white/80">
-                            2. Do you offer custom packaging or branding?
+                            2. Do you offer custom packaging?
                             </span>
                             <IoIosArrowDown className="size-5 fill-white/60 group-data-hover:fill-white/50 group-data-open:rotate-180" />
                         </DisclosureButton>
@@ -58,7 +58,7 @@ export default function Catering(){
                     <Disclosure as="div" className="px-4 py-2.5 bg-slate-800 rounded-xl">
                         <DisclosureButton className="group flex w-full items-center justify-between">
                             <span className="text-sm/6 font-medium text-white group-data-hover:text-white/80">
-                            3. What's the minimum order for catering or bulk delivery?
+                            3. What's the bulk delivery minimum order?
                             </span>
                             <IoIosArrowDown className="size-5 fill-white/60 group-data-hover:fill-white/50 group-data-open:rotate-180" />
                         </DisclosureButton>
@@ -76,7 +76,7 @@ export default function Catering(){
                     <Disclosure as="div" className="px-4 py-2.5 bg-slate-800 rounded-xl">
                         <DisclosureButton className="group flex w-full items-center justify-between">
                             <span className="text-sm/6 font-medium text-white group-data-hover:text-white/80">
-                            5. Do you offer tastings for corporate event planning?
+                            5. Do you offer corporate event testing?
                             </span>
                             <IoIosArrowDown className="size-5 fill-white/60 group-data-hover:fill-white/50 group-data-open:rotate-180" />
                         </DisclosureButton>

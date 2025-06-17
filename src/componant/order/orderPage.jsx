@@ -9,15 +9,15 @@ import pickup from "@/assets/order/pickup.json"
 
 export default function StartOrderPage() {
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen p-3.5 md:p-6">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl lg:text-6xl text-center font-bold text-slate-900 mb-8">Start an Order</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-3.5 md:gap-6">
           {/* Delivery Card */}
           <div className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
-              <Lottie className='flex items-center justify-center' loop animationData={delivery} play  style={{ height:120, width: 180 }}/>
+              <Lottie className='flex items-center justify-center' loop animationData={delivery} play  style={{ height:120, width: 170 }}/>
               <h2 className="mt-5 text-3xl font-bold text-gray-900">Delivery</h2>
             </div>
           </div>
@@ -25,13 +25,15 @@ export default function StartOrderPage() {
           {/* Pickup Card */}
           <div className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
-              <Lottie className='flex items-center justify-center' loop animationData={pickup} play  style={{ height:120, width: 180 }}/>
+              <Lottie className='flex items-center justify-center' loop animationData={pickup} play  style={{ height:120, width: 170 }}/>
               <h2 className="mt-5 text-3xl font-bold text-gray-900">Pickup</h2>
             </div>
           </div>
-
+        </div>
+        
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Digital Gift Cards */}
-          <div className="rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <CreditCard className="w-16 h-16 text-gray-700" />
@@ -41,7 +43,7 @@ export default function StartOrderPage() {
           </div>
 
           {/* Catering */}
-          <div className="rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <UtensilsCrossed className="w-16 h-16 text-gray-700" />
