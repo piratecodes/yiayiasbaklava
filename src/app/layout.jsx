@@ -1,5 +1,9 @@
 import localfont from "next/font/local"
+import { Analytics } from "@vercel/analytics/next"
 import "@/style/globals.css";
+
+
+//file add
 import Nav from "@/componant/nav";
 import Footer from "@/componant/footer";
 
@@ -41,6 +45,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Nav />
           {children}
+          <Analytics />
           <Footer />
         </Providers>
       </body>
