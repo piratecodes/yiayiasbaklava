@@ -1,36 +1,15 @@
-"use client"
 import React from "react";
 import Image from 'next/image'
 
 import img1 from "@/assets/about/dream.jpeg"
 import img2 from "@/assets/about/yia.jpg"
+import { Description } from "@headlessui/react";
 
 export default function About(){
     return(
-        <main className="container mx-auto my-10">
+        <main className="container my-10">
             <p className="text-center text-5xl text-sky-500 font-bold mb-10">Our Sweet Beginning</p>
             <ol className="relative space-y-8 before:absolute before:top-0 before:left-1/2 before:h-full before:w-0.5 before:-translate-x-1/2 before:rounded-full before:bg-cyan-900">
-                {/* <li className="group relative grid grid-cols-2 odd:-me-3 even:-ms-3">
-                    <div
-                    className="relative flex items-start gap-4 group-odd:flex-row-reverse group-odd:text-right group-even:order-last"
-                    >
-                    <span className="size-3 shrink-0 rounded-full bg-blue-600"></span>
-
-                    <div className="-mt-2">
-                        <time className="text-xs/none font-medium text-gray-700">12/02/2025</time>
-
-                        <h3 className="text-lg font-bold text-gray-900">Kickoff</h3>
-
-                        <p className="mt-0.5 text-sm text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga officiis tempora ipsum
-                        adipisci tenetur sunt quae exercitationem sed pariatur porro!
-                        </p>
-                    </div>
-                    </div>
-
-                    <div aria-hidden="true"></div>
-                </li> */}
-
                 <li className="group relative grid grid-cols-2 odd:-me-3 even:-ms-3">
                     <div
                     className="relative flex items-start gap-4 group-odd:flex-row-reverse group-odd:text-right group-even:order-last"
@@ -41,7 +20,7 @@ export default function About(){
                         <time className="text-xs/none font-medium text-gray-700">2021</time>
 
                         <h3 className="text-lg font-bold text-gray-900">One Big Dream</h3>
-                        <Image className="w-auto h-96" src={img1} alt="big dream"/>
+                        <Image className="w-auto h-96" src={img1} alt="big dream" draggable="false"/>
                     </div>
                     </div>
 
@@ -59,7 +38,7 @@ export default function About(){
 
                         <h3 className="text-lg font-bold text-gray-900">Who Is Yia Yia?</h3>
                         <div className="bg-gray-300/50 rounded-b-xl">
-                            <Image className="w-96 h-auto" src={img2} alt="big dream"/>
+                            <Image className="w-96 h-auto" src={img2} alt="big dream" draggable="false"/>
                             <p className="px-2.5 py-1.5 mt-2.5 w-96 text-justify">My mother, Christine, has a passion for baking that began in her childhood at just 5 years old. She learned recipes passed down from generations in our family, with a legacy of over 125 years. Baklava has been a staple dessert for all special moments, from family gatherings to weddings, and it’s always been a centerpiece of our family celebrations. After I was diagnosed with severe dyslexia at a young age my mother took it upon herself to find a way to pay for the very expensive ,and much needed, tutoring I needed. She began selling Greek delicacies, Baklava was her staple</p>
                         </div>
                     </div>
@@ -68,12 +47,12 @@ export default function About(){
                     <div aria-hidden="true"></div>
                 </li>
             </ol>
-            {/* <video className="w-96 h-auto mx-auto" src="https://yiayiasbaklava.com/wp-content/uploads/2023/12/Yia-Yias-Baklava-Homemade-Baklava-Order-Now.mp4" controls="" preload="metadata" muted="muted" controlslist="nodownload" poster="https://yiayiasbaklava.com/wp-content/uploads/2023/12/IMG-20231215-WA0003.jpg"></video> */}
+            
             <video className="w-7/12 h-auto mx-auto my-16 rounded-2xl" controls muted playsInline loop poster="/poster-balkava.jpg">
                 <source src="/baklava.mp4" type="video/mp4" />
             </video>
             
-            <section className="container px-5 mx-auto">
+            <section className="container px-5">
                 <h2 className="my-10 text-center text-sky-500 font-bold text-5xl">Why Yia Yia's Baklava</h2>
                 <div className="flex flex-wrap -m-4">
                     <div className="p-4 md:w-1/3">
@@ -105,4 +84,9 @@ export default function About(){
                 
         </main>
     );
+}
+
+export const metadata = {
+    title: "About",
+    description: "This is how we are and what we are all about"
 }

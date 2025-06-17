@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import localfont from "next/font/local"
 import "@/style/globals.css";
 import Nav from "@/componant/nav";
 import Footer from "@/componant/footer";
@@ -6,9 +6,22 @@ import Footer from "@/componant/footer";
 //Redux Provider for state Management
 import Providers from "./provider"
 
-const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin'],
+
+const helvetica = localfont({
+  src:[{
+    path:"../../public/helvetica-255/Helvetica-Bold.ttf",
+    weight: "700",
+    style: "bold"
+  },{
+    path:"../../public/helvetica-255/Helvetica.ttf",
+    weight: "400",
+    style: "normal"
+  },{
+    path:"../../public/helvetica-255/helvetica-light-587ebe5a59211.ttf",
+    weight: "300",
+    style: "light"
+  }],
+  variable: "--font-helvetica"
 })
 
 
@@ -24,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased scroll-smooth`}>
+      <body className={`${helvetica.className} antialiased scroll-smooth`}>
         <Providers>
           <Nav />
           {children}
