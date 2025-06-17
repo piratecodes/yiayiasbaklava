@@ -8,7 +8,7 @@ import img2 from "@/assets/about/yia.jpg"
 export default function About(){
     return(
         <main className="container mx-auto my-10">
-            <p className="text-center text-5xl text-cyan-900 font-bold mb-10">Our Sweet Beginning</p>
+            <p className="text-center text-5xl text-sky-500 font-bold mb-10">Our Sweet Beginning</p>
             <ol className="relative space-y-8 before:absolute before:top-0 before:left-1/2 before:h-full before:w-0.5 before:-translate-x-1/2 before:rounded-full before:bg-cyan-900">
                 {/* <li className="group relative grid grid-cols-2 odd:-me-3 even:-ms-3">
                     <div
@@ -74,7 +74,7 @@ export default function About(){
             </video>
             
             <section className="container px-5 mx-auto">
-                <h2 className="my-10 text-center text-cyan-900 font-bold text-5xl">Why Yia Yia's Baklava</h2>
+                <h2 className="my-10 text-center text-sky-500 font-bold text-5xl">Why Yia Yia's Baklava</h2>
                 <div className="flex flex-wrap -m-4">
                     <div className="p-4 md:w-1/3">
                         

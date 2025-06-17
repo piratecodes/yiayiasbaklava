@@ -69,7 +69,7 @@ export default function Nutrition() {
             {categories.map(({ name }) => (
               <Tab
                 key={name}
-                className="rounded-full px-3 py-1 text-sm/6 font-semibold text-black focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-cyan-100 data-selected:bg-white/10 data-selected:data-hover:bg-white/10"
+                className="rounded-full px-3 py-1 text-sm/6 font-semibold text-black focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-sky-50 data-selected:bg-white/10 data-selected:data-hover:bg-white/10"
               >
                 {name}
               </Tab>
@@ -77,10 +77,10 @@ export default function Nutrition() {
           </TabList>
           <TabPanels className="mt-3">
             {categories.map(({ name, posts }) => (
-              <TabPanel key={name} className="rounded-xl bg-cyan-100 p-3">
+              <TabPanel key={name} className="rounded-xl bg-sky-50 p-3">
                 <ul>
                   {posts.map((post) => (
-                    <li key={post.id} className="relative rounded-md p-3 text-sm/6 transition hover:bg-cyan-100">
+                    <li key={post.id} className="relative rounded-md p-3 text-sm/6 transition hover:bg-sky-50">
                       <a href="#" className="font-semibold text-black">
                         <span className="absolute inset-0" />
                         {post.title}

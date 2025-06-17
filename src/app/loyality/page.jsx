@@ -10,7 +10,7 @@ import img4 from "@/assets/loyality/Capture.jpg"
 export default function LoyaltyPointsBanner() {
   return (
     <React.Fragment>
-        <header className="relative w-full min-h-3/4 bg-cyan-900 overflow-hidden">
+        <header className="relative w-full min-h-3/4 bg-sky-500 overflow-hidden">
             
             {/* Wavy Bottom Border */}
             <div className="absolute bottom-0 left-0 right-0">
@@ -143,7 +143,7 @@ export default function LoyaltyPointsBanner() {
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Birthday Treat</h3>
                 <p className="mb-8 leading-relaxed">Enjoy a FREE Baklava on your birthday every year! To sign up, simply visit your Yia Yias Account online.</p>
-                <button className="inline-flex text-white bg-cyan-900 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">&gt;&gt; Visit Your Account </button>
+                <button className="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">&gt;&gt; Visit Your Account </button>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                 <Image className="object-cover object-center rounded" alt="hero" src={img} />
@@ -157,7 +157,7 @@ export default function LoyaltyPointsBanner() {
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Bonus points & Double Points​</h3>
                 <p className="mb-8 leading-relaxed">Never miss a chance to earn Double Points on select days so you can get FREE treats faster!</p>
-                <button className="inline-flex text-white bg-cyan-900 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">&gt;&gt; Visit Your Account </button>
+                <button className="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">&gt;&gt; Visit Your Account </button>
             </div>
         </section>
 
@@ -165,7 +165,7 @@ export default function LoyaltyPointsBanner() {
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Download the Points App For the Best Experience</h3>
                 <p className="mb-8 leading-relaxed">Enjoy personalize ordering, FREE Points, birthday rewards, and more with the Points ...</p>
-                <button className="inline-flex text-white bg-cyan-900 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">Download Now</button>
+                <button className="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-800 rounded-3xl text-lg">Download Now</button>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                 <Image className="object-cover object-center rounded" alt="hero" src={img2} />

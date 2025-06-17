@@ -15,7 +15,7 @@ export default function StartOrderPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Delivery Card */}
-          <div className="bg-cyan-100 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <Lottie className='flex items-center justify-center' loop animationData={delivery} play  style={{ height:120, width: 180 }}/>
               <h2 className="mt-5 text-3xl font-bold text-gray-900">Delivery</h2>
@@ -23,7 +23,7 @@ export default function StartOrderPage() {
           </div>
 
           {/* Pickup Card */}
-          <div className="bg-cyan-100 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <Lottie className='flex items-center justify-center' loop animationData={pickup} play  style={{ height:120, width: 180 }}/>
               <h2 className="mt-5 text-3xl font-bold text-gray-900">Pickup</h2>
