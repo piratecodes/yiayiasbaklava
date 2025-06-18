@@ -1,7 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { usePathname, useRouter } from 'next/navigation';
 
 const StoreLocator = () => {
+  const router = useRouter();
+  const pathname = usePathname()
   const mapRef = useRef(null);
   const initialized = useRef(false);
   const [map, setMap] = useState(null);
@@ -169,7 +172,8 @@ const StoreLocator = () => {
     setSelectedStore(store.id);
 
     window.handleOrderNow = (storeId) => {
-      alert(`Order from store ${storeId}`);
+      // alert(`Order from store ${storeId}`);
+      router.push(`${pathname}/${storeId}`)
     };
   };
 
@@ -187,7 +191,8 @@ const StoreLocator = () => {
   };
 
   const handleOrderNow = (storeId) => {
-    alert(`Order from store ${storeId}`);
+    // alert(`Order from store ${storeId}`);
+    router.push(`${pathname}/${storeId}`)
   };
 
   return (

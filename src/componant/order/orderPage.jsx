@@ -1,6 +1,7 @@
 "use client"
 
 import Lottie from 'react-lottie-player'
+import Link from 'next/link';
 import { Truck, Store, CreditCard, UtensilsCrossed } from 'lucide-react';
 
 
@@ -15,20 +16,20 @@ export default function StartOrderPage() {
         
         <div className="grid grid-cols-2 gap-3.5 md:gap-6">
           {/* Delivery Card */}
-          <div className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="flex flex-col items-center text-center">
+          <Link href="/login" className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+            <span className="flex flex-col items-center text-center">
               <Lottie className='flex items-center justify-center' loop animationData={delivery} play  style={{ height:120, width: 170 }}/>
               <h2 className="mt-5 text-3xl font-bold text-gray-900">Delivery</h2>
-            </div>
-          </div>
+            </span>
+          </Link>
 
           {/* Pickup Card */}
-          <div className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="flex flex-col items-center text-center">
+          <Link href="/order/pickup" className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+            <span className="flex flex-col items-center text-center">
               <Lottie className='flex items-center justify-center' loop animationData={pickup} play  style={{ height:120, width: 170 }}/>
               <h2 className="mt-5 text-3xl font-bold text-gray-900">Pickup</h2>
-            </div>
-          </div>
+            </span>
+          </Link>
         </div>
         
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
