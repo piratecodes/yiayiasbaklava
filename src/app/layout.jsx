@@ -1,6 +1,9 @@
 import localfont from "next/font/local"
+import dynamic from 'next/dynamic'
 import { Analytics } from "@vercel/analytics/next"
 import "@/style/globals.css";
+
+const BrowserUpdate = dynamic(()=> import('browser-update'), {ssr: false})
 
 
 //file add
@@ -46,6 +49,7 @@ export default function RootLayout({ children }) {
           <Nav />
           {children}
           <Analytics />
+          <BrowserUpdate />
           <Footer />
         </Providers>
       </body>

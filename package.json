@@ -12,6 +12,7 @@
     "@headlessui/react": "^2.2.4",
     "@reduxjs/toolkit": "^2.8.2",
     "@vercel/analytics": "^1.5.0",
+    "browser-update": "^3.3.55",
     "connected-next-router": "^5.0.0",
     "lucide-react": "^0.514.0",
     "next": "15.3.3",

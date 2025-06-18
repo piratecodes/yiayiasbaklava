@@ -1060,6 +1060,11 @@ braces@^3.0.3:
   dependencies:
     fill-range "^7.1.1"
 
+browser-update@^3.3.55:
+  version "3.3.55"
+  resolved "https://registry.yarnpkg.com/browser-update/-/browser-update-3.3.55.tgz#c8bba6ac7c1cd9c661a6121e2fa4bec7e1f247b3"
+  integrity sha512-HMIkrOK21xCY/hw39eQTFN7wtGNRuk7I6VSm2U6mYkhOT/eP9g2uUcYy/tBZY3lo1nvjIrmyY+oeK98a8YRbkA==
+
 busboy@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/busboy/-/busboy-1.6.0.tgz#966ea36a9502e43cdb9146962523b92f531f6893"
