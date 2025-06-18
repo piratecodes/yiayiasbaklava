@@ -109,7 +109,7 @@ export default function Nav() {
       </div>
       <aside ref={ref3} className='absolute inset-y-0 flex flex-col w-full h-screen z-30 md:w-4/6 lg:w-1/4 bg-sky-500/95 md:rounded-r-4xl transition ease-linear duration-300 -translate-x-full'>
         <div className='flex justify-between h-10 w-11/12 my-4 mx-auto'>
-          <span><Link href="/login" className='font-bold text-2xl text-white' >Sign In</Link> </span>
+          <span><Link href="/login" onClick={handleMenuClick} className='font-bold text-2xl text-white' >Sign In</Link> </span>
           <span><button aria-label="Close Cart" title="Close Cart" className="focus:shadow-outline -mr-1 rounded-full p-2 transition duration-200 hover:bg-deep-purple-50 hover:bg-opacity-30 bg-white" onClick={() => toogleMenu()}><GrClose className="w-5 text-lg text-black" /></button></span>
         </div>
         <hr className='border border-gray-400 my-1 w-11/12 mx-auto ' />
