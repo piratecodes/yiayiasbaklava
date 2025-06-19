@@ -8,6 +8,6 @@ export default function Orders(){
 }
 
 export const metadata = {
-  title: "About",
-  description: "This is how we place an order from our website"
+  title: "Order",
+  description: "This is how a user can place their order by choosing a mode of order"
 }
