@@ -1,14 +1,14 @@
 import React from "react";
 
 //Import Page
-import Login from "@/componant/login/loginPage"
+import Signup from "@/componant/signin/signinpage"
 
 export default function SignInPage() {
   
-  return <Login />
+  return <Signup />
 }
 
 export const metadata = {
-    title: "Sign In",
+    title: "Sign Up",
     description: "User can Sign Up from this Page"
 }

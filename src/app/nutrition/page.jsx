@@ -824,7 +824,7 @@ export default function Nutrition() {
             </TabPanels>
           </TabGroup>
         </div>
-    </main>
+      </main>
     </React.Fragment>
   )
 }

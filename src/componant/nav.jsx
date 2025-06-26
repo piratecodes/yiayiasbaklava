@@ -5,6 +5,10 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
+//Redux profilesetup
+import { useSelector } from 'react-redux';
+import { userSelector } from '@/redux/features/userSlice'
+
 import { GrClose } from 'react-icons/gr'
 import logo from '@/assets/logo.png'
 
@@ -63,6 +67,9 @@ export default function Nav() {
    }
 
   //  const navClass = pathName === "/" ? scrollPosition > 50 ? 'bg-cyan-500/25 backdrop-blur-lg shadow-md' : 'bg-transparent' : 'bg-cyan-500/25 backdrop-blur-lg shadow-md'
+  
+  //Redux
+  const { name, avtar, verification, jwt } = useSelector( userSelector );
 
   return (
     <nav className={`sticky top-0 left-0 py-2 w-full z-50 transform transition-normal ease-initial ${pathName === "/" ? scrollPosition > 50 ? 'bg-sky-100 shadow-md' : 'bg-transparent' : 'bg-sky-100 shadow-md'}`}>
@@ -109,7 +116,8 @@ export default function Nav() {
       </div>
       <aside ref={ref3} className='absolute inset-y-0 flex flex-col w-full h-screen z-30 md:w-4/6 lg:w-1/4 bg-sky-500/95 md:rounded-r-4xl transition ease-linear duration-300 -translate-x-full'>
         <div className='flex justify-between h-10 w-11/12 my-4 mx-auto'>
-          <span><Link href="/login" onClick={handleMenuClick} className='font-bold text-2xl text-white' >Sign In</Link> </span>
+          {!verification && !jwt && <span><Link href="/login" onClick={handleMenuClick} className='font-bold text-2xl text-white' >Sign In</Link> </span>}
+          {verification && jwt && <Link href="/profile" className='flex space-x-2.5 items-center'><span className='relative w-12 h-12 bg-black rounded-full border-2 border-black overflow-clip'><Image src={avtar} layout='fill' alt={`Avtar of ${name}`} draggable="false" /></span><span onClick={handleMenuClick} className='font-bold text-2xl text-white capitalize' >{name}</span> </Link>}
           <span><button aria-label="Close Cart" title="Close Cart" className="focus:shadow-outline -mr-1 rounded-full p-2 transition duration-200 hover:bg-deep-purple-50 hover:bg-opacity-30 bg-white" onClick={() => toogleMenu()}><GrClose className="w-5 text-lg text-black" /></button></span>
         </div>
         <hr className='border border-gray-400 my-1 w-11/12 mx-auto ' />

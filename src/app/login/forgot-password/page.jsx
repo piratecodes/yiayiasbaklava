@@ -1,14 +1,14 @@
 import React from "react";
 
 //Import Page
-import Login from "@/componant/login/loginPage"
+import Forgot from "@/componant/login/forgotPassword"
 
 export default function SignInPage() {
   
-  return <Login />
+  return <Forgot />
 }
 
 export const metadata = {
     title: "Sign In",
-    description: "User can Sign Up from this Page"
+    description: "User can Reset password from this Page"
 }

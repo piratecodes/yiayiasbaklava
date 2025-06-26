@@ -2,6 +2,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from 'next/navigation';
 
+//Redux profilesetup
+import { useSelector } from 'react-redux';
+import { userSelector } from '@/redux/features/userSlice'
+
 const StoreLocator = () => {
   const router = useRouter();
   const pathname = usePathname()
@@ -11,6 +15,9 @@ const StoreLocator = () => {
   const [markers, setMarkers] = useState([]);
   const [infoWindow, setInfoWindow] = useState(null);
   const [selectedStore, setSelectedStore] = useState(null);
+
+  //Redux
+  const { jwt } = useSelector( userSelector );
 
   const stores = [
     {
@@ -54,6 +61,19 @@ const StoreLocator = () => {
       iconUrl: "/store5-icon.png",
     },
   ];
+
+  // useEffect(async()=>{
+  //   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`,{
+  //     method: "POST",
+  //     headers: {
+  //     Accept: "application/json",
+  //     Authorization: `Bearer ${jwt}`,
+  //     "Content-Type": "application/json",
+  //     },
+  //     body: `{ "search": "Kimberton Whole Foods" }`,
+  //   })
+  //   const stores = response.json().data;
+  // },[])
 
   useEffect(() => {
     if (initialized.current) return;
@@ -247,7 +267,7 @@ const StoreLocator = () => {
                       <img
                         src={store.iconUrl}
                         alt={store.name}
-                        className="w-12 h-12 rounded-lg object-cover"
+                        className="w-12 h-12 object-cover border-2 border-black rounded-full overflow-clip"
                         onError={(e) => {
                           e.target.src =
                             "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iOCIgZmlsbD0iIzM5OGVmNCIvPgo8dGV4dCB4PSIyNSIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+Cjwvc3ZnPg==";
