@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
 import AuthInitializer from "@/utils/auth"
-// import { useReportWebVitals } from 'next/web-vitals';
-// import {onLCP, onINP, onCLS} from 'web-vitals';
+import { useReportWebVitals } from 'next/web-vitals';
+import {onLCP, onINP, onCLS} from 'web-vitals';
 
 
 // Redux
@@ -11,11 +11,11 @@ import store from "@/redux/store"
 
 
 export default function Providers({children}){
-    // useReportWebVitals((metric)=>{
-    //     onCLS(console.log)
-    //     onINP(console.log)
-    //     onLCP(console.log)
-    // })
+    useReportWebVitals((metric)=>{
+        onCLS(console.log)
+        onINP(console.log)
+        onLCP(console.log)
+    })
     
     return(
         <Provider store={store}>
