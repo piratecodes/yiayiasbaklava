@@ -32,9 +32,8 @@ export default function StartOrderPage() {
           </Link>
         </div>
         
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Digital Gift Cards */}
-          <div className="rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+        {/* Digital Gift Cards */}
+          <div className="mt-8 rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <CreditCard className="w-16 h-16 text-gray-700" />
@@ -42,17 +41,6 @@ export default function StartOrderPage() {
               <h2 className="text-2xl font-bold text-gray-900">Digital Gift Cards</h2>
             </div>
           </div>
-
-          {/* Catering */}
-          <div className="rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-6">
-                <UtensilsCrossed className="w-16 h-16 text-gray-700" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900">Catering</h2>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -93,7 +93,7 @@ export default function Dashboard(){
                     <span className='relative w-24 h-24 bg-black rounded-full border-2 border-black overflow-clip'><Image src={avtar || null} layout='fill' alt={`Avtar of ${name}`} draggable="false" /></span>
                     <figcaption className='flex flex-col space-y-1'><label>Name: {name}</label><label>Phone: {phone}</label><label>Email: {email}</label></figcaption>
                 </figure>
-                <button type="button" className="text-white h-12 bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={()=> {dispatch(logoutUser()); router.push('/') }}>Log Out</button>
+                <button type="button" className="text-sky-500 h-12 bg-white font-semibold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={()=> {dispatch(logoutUser()); router.push('/') }}>Log Out</button>
             
             </header>
             <main className="flex w-full justify-center px-4 my-20 ">
