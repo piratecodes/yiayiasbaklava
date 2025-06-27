@@ -39,7 +39,7 @@ export default function SignInPage() {
 
         if (isSuccess) {
           verification == 1 ? setVerify(true) : setVerify(false)
-          if (verify === true) setTimeout(()=>{ router.push('/') },300)
+          if (verify === true) setTimeout(()=>{ location.replace('/') }, 300)
         }
     }, [isError, isSuccess, dispatch, errorMessage]);
 
