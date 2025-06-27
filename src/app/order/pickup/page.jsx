@@ -20,7 +20,7 @@ export default function Colmer(){
                 </Link>
 
                 {/* Pickup Card */}
-                <Link href="/order/pickup" className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+                <Link href="/order/pickup/curbside" className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
                     <span className="flex flex-col items-center text-center">
                     <ShoppingBasket className="fill-sky-500" size={100} />
                     <h2 className="mt-5 text-lg md:text-3xl font-bold text-gray-900">Curbside</h2>
@@ -31,4 +31,9 @@ export default function Colmer(){
             </div>
         </div>
     )
+}
+
+export const metadata = {
+    title: "Pickup",
+    description: "This page shows the nutritional value plesent in our baklava"
 }
