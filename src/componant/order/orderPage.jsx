@@ -33,14 +33,14 @@ export default function StartOrderPage() {
         </div>
         
         {/* Digital Gift Cards */}
-          <div className="mt-8 rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <Link href="/order/giftcard" className="grid mt-8 rounded-3xl p-5 md:p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">
                 <CreditCard className="w-16 h-16 text-gray-700" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Digital Gift Cards</h2>
             </div>
-          </div>
+          </Link>
       </div>
     </div>
   );

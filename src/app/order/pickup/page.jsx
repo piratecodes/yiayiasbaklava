@@ -8,7 +8,7 @@ export default function Colmer(){
     return(
         <div className="min-h-screen p-3.5 md:p-6">
             <div className="max-w-5xl mx-auto">
-                <h1 className="text-4xl lg:text-6xl text-center font-bold text-slate-900 mb-8">Start an Order</h1>
+                <h1 className="text-4xl lg:text-6xl text-center font-bold text-slate-900 mb-8">Choose Your Order Type</h1>
                 
                 <div className="grid grid-cols-2 gap-3.5 md:gap-6">
                 {/* Delivery Card */}

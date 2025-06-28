@@ -1,7 +1,7 @@
 import React from 'react'
 import { notFound } from 'next/navigation';
 
-import PackSelectionPage from '@/componant/order/curbsideSlug'
+import PackSelectionPage from '@/componant/order/productSlug'
 
 // Helper function to get cookies
 function getCookie(name) {
@@ -18,6 +18,11 @@ function getCookie(name) {
 }
 
 export default async function Product({params}){
+  //deliveryType Slug Check & productSlug Declaration
+    const { deliveryType, productSlug } = await params
+    if(deliveryType !== "carryout" && deliveryType !== "curbside") notFound()
+
+    //From hare product page starts
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product-list-category-wise`,{
         method: "GET",
         headers: {
@@ -29,7 +34,7 @@ export default async function Product({params}){
 
     const product = await response.json()
 
-    const slugIs = await product.data.find(i => i.slug === "all")?.shop_products.find(i => i.slug === params.productSlug )
+    const slugIs = await product.data.find(i => i.slug === "all")?.shop_products.find(i => i.slug === productSlug )
 
     if(!slugIs) notFound();
 

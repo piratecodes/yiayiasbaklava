@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { useParams } from 'next/navigation'; // For accessing productSlug
+import { useParams, useRouter } from 'next/navigation'; // For accessing productSlug
 
 // --- Map product slugs to their display names and bundle counts ---
 // This replaces the need to fetch pack details from an API
@@ -15,11 +15,9 @@ const packInfoMap = {
 };
 
 export default function CarryoutPackSelectionPage({flavour}) { // Added 'flavour' prop
+  const router = useRouter()
   const params = useParams();
-  const { productSlug } = params; // Now we get productSlug from the URL
-
-  // The deliveryType is now hardcoded for this specific file
-  const deliveryType = 'carryout'; 
+  const { deliveryType, productSlug } = params; // Now we get productSlug from the URL
 
   // Get pack details using productSlug
   const packDetails = packInfoMap[productSlug];
@@ -203,7 +201,7 @@ export default function CarryoutPackSelectionPage({flavour}) { // Added 'flavour
             </label>
             <button
               className="w-full sm:w-auto px-6 py-3 bg-white text-sky-500 font-bold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-              disabled={requiredFlavorCount !== 0 && totalSelectedFlavors !== requiredFlavorCount} 
+              disabled={requiredFlavorCount !== 0 && totalSelectedFlavors !== requiredFlavorCount} onClick={()=> router.push('/order/checkout')}
             >
               Add to Bag - ${totalPrice}
             </button>

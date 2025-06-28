@@ -34,6 +34,13 @@ export default function SignInPage() {
     if (data.status == 1) {setTimeout(()=>{ location.replace('/') },300)} else showError(data.message)
   };
 
+  const resendOtp = async (e) => {
+    e.preventDefault();
+    const responce = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/resend-otp`, {method:"POST",  headers: {"Content-Type": "application/json",}, body: JSON.stringify({ "email": email })})
+    const data = await responce.json()
+    if (data.status == 1) {setTimeout(()=>{ location.replace('/') },300)} else showError(data.message)
+  };
+
   useEffect(() => {
         if (isError) {
             errorMessage == "User not verified!" ? setVerify(false) : showError(errorMessage)
@@ -82,7 +89,7 @@ export default function SignInPage() {
                 className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
               />
               <p className="text-red-500 text-xs mt-1">* This field is required</p>
-
+            <button className='block ml-auto w-fit py-1.5 px-3 rounded-2xl bg-sky-500 text-white shadow-lg shadow-sky-100' onClick={resendOtp}>Resend OTP</button>
             <button onClick={handleOtp} className="w-full bg-black text-white py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
               Submit OTP
             </button>
