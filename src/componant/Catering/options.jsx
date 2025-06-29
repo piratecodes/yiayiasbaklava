@@ -11,12 +11,12 @@ export default function Option(){
                 Our Catering Options
             </h2>
             
-            <p className="text-md lg:text-lg text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-center text-md lg:text-lg text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
                 From intimate office gatherings to large-scale corporate galas, Yia Yia Baklava offers flexible catering solutions that fit your event style, guest count, and taste preferences.
             </p>
             
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
-                <Image className="w-80 h-auto transition delay-300 ease-in-out hover:scale-110" src={img1} alt="kl" draggable="false" />
+                <Image className="w-80 h-auto transition delay-300 ease-in-out hover:scale-110 mx-auto" src={img1} alt="kl" draggable="false" />
                 
                 <ol className="relative border-s border-gray-200">                  
                     <li className="mb-10 ms-6">            
