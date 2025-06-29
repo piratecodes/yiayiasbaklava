@@ -54,9 +54,9 @@ export default function Home({home, token}) {
         <p className="mt-4 md:mt-8 mb-8 text-center p-2 rounded-3xl bg-sky-500 text-white max-w-xs mx-auto font-normal text-md">{home.data.weekly_timeline || "This Week's Special"}</p>
         
         {home.data.weekly_products ? home.data.weekly_products.map((p) => (
-          <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl flex flex-row items-center justify-between hover:bg-sky-50/75 transition duration-300 ease-in">
-          <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill/></figure>
-          <div className='items-center-safe pl-4 pr-2'>
+          <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+          <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+          <div className='items-center-safe pr-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p>
             <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
@@ -71,9 +71,9 @@ export default function Home({home, token}) {
         <p className="flex flex-row items-center my-3 text-center p-2 rounded-3xl max-w-xs mx-auto space-x-1.5 font-medium text-lg"><FaMapMarkerAlt className='fill-gray-900' /> <span>Visit Your Local Store Near You</span></p>
         
         {home.data.classic_products ? home.data.classic_products.map((p) => (
-          <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl flex flex-row items-center justify-between hover:bg-sky-50/75 transition duration-300 ease-in">
-          <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill/></figure>
-          <div className='items-center-safe pl-4 pr-2'>
+          <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+          <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+          <div className='items-center-safe pr-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p>
             <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
