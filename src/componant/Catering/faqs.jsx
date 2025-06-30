@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
-
+import { useRouter } from 'next/navigation'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 
 import { IoIosArrowDown } from "react-icons/io";
 
 
 export default function Catering(){
-    
+    const router = useRouter()
 
     return(
             
@@ -24,7 +24,7 @@ export default function Catering(){
                         Planning an event should feel exciting, not overwhelming. So we've put together answers to the most common questions - so you can book with confidence, clarity, and zero stress.
                     </p>
                     
-                    <button className="inline-flex items-center px-8 py-3 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300">
+                    <button onClick={()=>router.push('/order')} className="inline-flex items-center px-8 py-3 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300">
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>

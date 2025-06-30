@@ -38,7 +38,37 @@ export const metadata = {
     default: "Yia Yis's Baklava",
   },
   description: "A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped",
-  canonical: "https://yiayiasbaklava.com/"
+  canonical: "https://staging.yiayiasbaklava.com/",
+  sitename: "Yia Yia's Baklava",
+  openGraph: {
+    url: 'https://staging.yiayiasbaklava.com',
+    title: "Yia Yia's Baklava",
+    type: 'website',
+    siteName: "Yia Yia's Baklava",
+    description: 'A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped',
+    images: [
+      {url: "https://staging.yiayiasbaklava.com/32x32.webp", alt: "yiayiasbaklava | Logo", type: 'image/webp', sizes:"32x32", fetchPriority: "auto"},
+      {url: "https://staging.yiayiasbaklava.com/192x192.webp", alt: "yiayiasbaklava | Logo", type: 'image/webp', sizes:"192x192", fetchPriority: "auto"}
+    ],
+  },
+  twitter:{
+    card: "Yia Yia's Baklava",
+    title: "Yia Yia's Baklava",
+    creator: "Yia Yia's Baklava",
+    description: 'A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped',
+    images: [
+      {url: "https://staging.yiayiasbaklava.com/32x32.webp", alt: "yiayiasbaklava | Logo", type: 'image/webp', sizes:"32x32", fetchPriority: "auto"},
+      {url: "https://staging.yiayiasbaklava.com/192x192.webp", alt: "yiayiasbaklava | Logo", type: 'image/webp', sizes:"192x192", fetchPriority: "auto"}
+    ],
+  },
+  icons:{
+    icon:[
+      {url: '/favicon.ico', type: "image/x-icon", rel:"icon", fetchPriority: "auto"},
+      {url: '/32x32.webp', type: "image/webp", sizes:"32x32", rel:"icon", fetchPriority: "auto"},
+      {url: '/192x192.webp', type: "image/webp", sizes:"192x192", rel:"icon", fetchPriority: "auto"},
+    ],
+    shortcut: {url: '/32x32.webp', type: "image/webp", fetchPriority: "auto"},
+  }
 };
 
 export default function RootLayout({ children }) {
