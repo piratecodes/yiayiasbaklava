@@ -16,3 +16,10 @@ html {
         margin: 0;
     }
 }
+
+.radial{
+    background: radial-gradient(ellipse at center, #fef08a, #fefce8, transparent);
+}
+.radial2{
+    background: radial-gradient(ellipse at center, #fef08a, #fefce8, transparent);
+}

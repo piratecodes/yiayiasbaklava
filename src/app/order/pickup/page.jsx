@@ -16,6 +16,7 @@ export default function Colmer(){
                     <span className="flex flex-col items-center text-center">
                     <Store className="fill-sky-500" size={100} />
                     <h2 className="mt-5 text-lg md:text-3xl font-bold text-gray-900">Carry Out</h2>
+                    <p className="mt-2.5 text-md md:text-lg font-bold text-gray-900">Get Your Order at the pickup counter.</p>
                     </span>
                 </Link>
 
@@ -24,6 +25,7 @@ export default function Colmer(){
                     <span className="flex flex-col items-center text-center">
                     <ShoppingBasket className="fill-sky-500" size={100} />
                     <h2 className="mt-5 text-lg md:text-3xl font-bold text-gray-900">Curbside</h2>
+                    <p className="mt-2.5 text-md md:text-lg font-bold text-gray-900">Park outside and we will deliver to your car.</p>
                     </span>
                 </Link>
                 </div>

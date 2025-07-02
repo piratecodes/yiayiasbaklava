@@ -96,66 +96,71 @@ export default function Nutrition({all}) {
             </TabList>
             <TabPanels className="mt-3 border-2 border-sky-500 rounded-lg">
                 <TabPanel className="rounded-xl bg-sky-50 p-3 space-y-5">    
-                    {all.data.filter(i => i.slug === "all")[0]?.shop_products.map((i)=>{
-                        return <Link key={i.product_id} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
+                    {all.data.filter(i => i.slug === "all")[0]?.shop_products.map((i, j)=>{
+                        return <Link key={j} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="" /> */}
-                            <figure className='relative w-96 h-96 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
+                            <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
-                                <p className="mb-3 font-normal text-gray-900">$ {i.price}</p>
+                                <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
                             </div>
                         </Link>
                     })}
                 </TabPanel>
                 <TabPanel className="rounded-xl bg-sky-50 p-3">
-                     {all.data.filter(i => i.slug === "party-pack")[0]?.shop_products.map((i)=>{
-                        return <Link key={i.category_id} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
+                     {all.data.filter(i => i.slug === "party-pack")[0]?.shop_products.map((i, j)=>{
+                        return <Link key={j} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="" /> */}
-                            <figure className='relative w-96 h-96 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
+                            <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
-                                <p className="mb-3 font-normal text-gray-900">$ {i.price}</p>
+                                <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
                             </div>
                         </Link>
                     })}
                 </TabPanel>
                 <TabPanel className="rounded-xl bg-sky-50 p-3">
-                     {all.data.filter(i => i.slug === "large")[0]?.shop_products.map((i)=>{
-                        return <Link key={i.category_id} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
+                     {all.data.filter(i => i.slug === "large")[0]?.shop_products.map((i, j)=>{
+                        return <Link key={j} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="" /> */}
-                            <figure className='relative w-96 h-96 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
+                            <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
-                                <p className="mb-3 font-normal text-gray-900">$ {i.price}</p>
+                                <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
                             </div>
                         </Link>
                     })}
                 </TabPanel>
                 <TabPanel className="rounded-xl bg-sky-50 p-3">
-                     {all.data.filter(i => i.slug === "medium")[0]?.shop_products.map((i)=>{
-                        return <Link key={i.category_id} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
+                     {all.data.filter(i => i.slug === "medium")[0]?.shop_products.map((i, j)=>{
+                        return <Link key={j} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="" /> */}
-                            <figure className='relative w-96 h-96 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
+                            <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
-                                <p className="mb-3 font-normal text-gray-900">$ {i.price}</p>
+                                <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
                             </div>
                         </Link>
                     })}
                 </TabPanel>
                 <TabPanel className="rounded-xl bg-sky-50 p-3">
-                     {all.data.filter(i => i.slug === "single")[0]?.shop_products.map((i)=>{
-                        return <Link key={i.category_id} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
+                     {all.data.filter(i => i.slug === "single")[0]?.shop_products.map((i, j)=>{
+                        return <Link key={j} href={`${pathname}/${i.slug}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100">
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="" /> */}
-                            <figure className='relative w-96 h-96 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
+                            <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt="" /></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
-                                <p className="mb-3 font-normal text-gray-900">$ {i.price}</p>
+                                <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
                             </div>
                         </Link>
                     })}
