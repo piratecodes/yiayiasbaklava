@@ -69,7 +69,7 @@ export default function Home({home, token}) {
       </header> */}
       <header className="w-full h-full relative">
         <video className="hidden md:block z-10  w-full h-auto object-cover" autoPlay muted playsInline loop>
-          <source src="/Horizontal-Baklava.mp4" type="video/mp4" />
+          <source src="/Horizontal-Baklava.webm" type="video/mp4" />
         </video>
         <video className="md:hidden z-10 w-ull h-auto object-cover" autoPlay muted playsInline loop>
           <source src={home.data.slider[0].image} type="video/mp4" />
