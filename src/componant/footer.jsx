@@ -3,18 +3,18 @@ import Link from 'next/link';
 
 export default function Footer() {  
   return (
-    <footer className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-sky-50">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="w-full px-4 sm:px-6 lg:px-8 bg-sky-50">
+      {/* <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8"> */}
         {/* Logo and Description */}
-        <div className="col-span-1 md:col-span-2">
+        {/* <div className="col-span-1 md:col-span-2">
           <h6 className='text-2xl font-bold text-sky-500'>Handmade Healthy & Yummi</h6>
           <p className="mt-4 text-gray-400">
             Experience the authentic taste of homemade baklava, crafted with love and tradition.
           </p>
-        </div>
+        </div> */}
 
         {/* Quick Links */}
-        <div>
+        {/* <div>
           <h3 className="text-lg font-semibold mb-4 text-sky-500">Quick Links</h3>
           <ul className="space-y-2">
             <li>
@@ -38,11 +38,11 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact Info */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4 text-sky-500">Contact Us</h3>
+        {/* <div> */}
+          {/* <h3 className="text-lg font-semibold mb-4 text-sky-500">Contact Us</h3>
           <ul className="space-y-2 text-gray-400">
             <li className="flex items-center">
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -61,10 +61,10 @@ export default function Footer() {
                 (123) 456-7890
               </a>
             </li>
-          </ul>
+          </ul> */}
 
           {/* Social Media */}
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-sky-500 transition">
                 <span className="sr-only">Facebook</span>
@@ -80,11 +80,11 @@ export default function Footer() {
               </a>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Copyright */}
-      <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-700">
+      <div className="max-w-7xl mx-auto border-t py-4 border-gray-700">
         <p className="text-center text-gray-400">
           © {new Date().getFullYear()} Yia Yia's Baklava. All rights reserved.
         </p>

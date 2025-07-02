@@ -53,7 +53,7 @@ export const metadata = {
   },
   twitter:{
     card: "Yia Yia's Baklava",
-    title: "Yia Yia's Baklava",
+    title: "Home - Yia Yia's Baklava",
     creator: "Yia Yia's Baklava",
     description: 'A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped',
     images: [
@@ -63,11 +63,10 @@ export const metadata = {
   },
   icons:{
     icon:[
-      {url: '/favicon.ico', type: "image/x-icon", rel:"icon", fetchPriority: "auto"},
       {url: '/32x32.webp', type: "image/webp", sizes:"32x32", rel:"icon", fetchPriority: "auto"},
       {url: '/192x192.webp', type: "image/webp", sizes:"192x192", rel:"icon", fetchPriority: "auto"},
     ],
-    shortcut: {url: '/32x32.webp', type: "image/webp", fetchPriority: "auto"},
+    shortcut: {url: '/192x192.webp', type: "image/webp", fetchPriority: "auto"},
   }
 };
 

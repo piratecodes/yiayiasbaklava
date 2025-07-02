@@ -31,6 +31,24 @@ export default function Home({home, token}) {
 
         }
     }
+
+    const formatWeekRange = (dateRangeString) => {
+        if (!dateRangeString) return "This Week's Special"; // Handle cases where data might be missing
+
+        const [startDateStr, endDateStr] = dateRangeString.split(' - ');
+        const parseDate = (str) => {
+            const [d, m, y] = str.split('-').map(Number);
+            return new Date(y, m - 1, d);
+        };
+
+        const startDate = parseDate(startDateStr);
+        const endDate = parseDate(endDateStr);
+
+        const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(startDate);
+
+        return `Week of ${monthName} ${startDate.getDate()} - ${endDate.getDate()}`;
+    };
+
   
 
   return (
@@ -51,11 +69,10 @@ export default function Home({home, token}) {
       </header>
       <main className="container md:mt-auto lg:mt-0 ">
         <p className="lg:mt-10 text-center text-6xl font-bold text-sky-500">Weekly Creations</p>
-        <p className="mt-4 md:mt-8 mb-8 text-center p-2 rounded-3xl bg-sky-500 text-white max-w-xs mx-auto font-normal text-md">{home.data.weekly_timeline || "This Week's Special"}</p>
+        <p className="mt-4 md:mt-8 mb-8 text-center p-2 rounded-3xl bg-sky-500 text-white max-w-xs mx-auto font-normal text-md">{home.data.weekly_timeline ? formatWeekRange(home.data.weekly_timeline) : "This Week's Special"}</p>
         
-        {home.data.weekly_products ? home.data.weekly_products.map((p) => (
-          <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
-          <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+        {home.data.weekly_products ? home.data.weekly_products.map((p, q) => (
+          (q+1)%2 == 0? <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
           <div className='items-center-safe pr-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p>
@@ -64,24 +81,45 @@ export default function Home({home, token}) {
               {/* <but ton className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</but> */}
             </span>
           </div>
-        </div>
-        )): <p className='text-center text-2xl md:text-4xl lg:text-5xl font-semibold'>SORRY!! No Records Found</p>}
-
-        <p className="mt-24 ml-1/12 text-center text-6xl font-bold text-sky-500">Yia Yia's Classic</p>
-        <p className="flex flex-row items-center my-3 text-center p-2 rounded-3xl max-w-xs mx-auto space-x-1.5 font-medium text-lg"><FaMapMarkerAlt className='fill-gray-900' /> <span>Visit Your Local Store Near You</span></p>
-        
-        {home.data.classic_products ? home.data.classic_products.map((p) => (
-          <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
-          <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+          <figure className="relative h-40 lg:h-96 w-full"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+        </div>: <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+          <figure className="relative h-40 lg:h-96 w-full"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
           <div className='items-center-safe pr-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p>
             <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
               <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
-              {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</button> */}
+              {/* <but ton className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</but> */}
             </span>
           </div>
-        </div>
+        </div> 
+        )): <p className='text-center text-2xl md:text-4xl lg:text-5xl font-semibold'>SORRY!! No Records Found</p>}
+
+        <p className="mt-24 ml-1/12 text-center text-6xl font-bold text-sky-500">Yia Yia's Classic</p>
+        <p className="flex flex-row items-center my-3 text-center p-2 rounded-3xl max-w-xs mx-auto space-x-1.5 font-medium text-lg"><FaMapMarkerAlt className='fill-gray-900' /> <span>Visit Your Local Store Near You</span></p>
+        
+        {home.data.classic_products ? home.data.classic_products.map((p, q) => (
+          (q+1)%2 == 0?  <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+            <div className='items-center-safe pr-2'>
+              <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
+              <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p>
+              <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
+                <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
+                {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</button> */}
+              </span>
+            </div>
+            <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+          </div>: <div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+            <figure className="relative h-40 lg:h-96 w-3/4"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+            <div className='items-center-safe pr-2'>
+              <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
+              <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p>
+              <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
+                <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
+                {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</button> */}
+              </span>
+            </div>
+          </div>
         )): <p className='text-center text-2xl md:text-4xl lg:text-5xl font-semibold'>No Records to display</p>}
         
         <div className='max-w-5xl mx-auto mt-24 mb-20'>
