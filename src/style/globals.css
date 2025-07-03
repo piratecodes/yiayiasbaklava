@@ -17,9 +17,18 @@ html {
     }
 }
 
-.radial{
-    background: radial-gradient(ellipse at center, #fef08a, #fefce8, transparent);
+::selection {
+  background: #cceaf2;
+  color: rgb(0, 200, 255);
+  text-shadow: none;
 }
-.radial2{
+
+::-moz-selection {
+  background: #cceaf2;
+  color: rgb(0, 200, 255);
+  text-shadow: none;
+}
+
+.radial{
     background: radial-gradient(ellipse at center, #fef08a, #fefce8, transparent);
 }

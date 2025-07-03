@@ -11,5 +11,5 @@ export default async function HomePage(){
   const responce = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`)
   const home = await responce.json()
 
-  return <Home home={home} token={token} />
+  return <Home key={Math.floor(Math.random()*10)} home={home} token={token} />
 }

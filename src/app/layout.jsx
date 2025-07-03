@@ -31,6 +31,44 @@ const helvetica = localfont({
   variable: "--font-helvetica"
 })
 
+const sofia = localfont({
+  src:[{
+    path:"../../public/sofia-pro/Sofia-Pro-UltraLight-Az.woff",
+    weight: "100",
+    style: "thin"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-ExtraLight-Az.woff",
+    weight: "200",
+    style: "extralight"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-Light-Az.woff",
+    weight: "300",
+    style: "light"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-Regular-Az.woff",
+    weight: "400",
+    style: "normal"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-Medium-Az.woff",
+    weight: "500",
+    style: "medium"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-Semi-Bold-Az.woff",
+    weight: "600",
+    style: "semibold"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-Bold-Az.woff",
+    weight: "700",
+    style: "bold"
+  },{
+    path:"../../public/sofia-pro/Sofia-Pro-Black-Az.woff",
+    weight: "900",
+    style: "black"
+  }],
+  variable: '--font-sofia',
+  display: 'swap',
+})
+
 
 export const metadata = {
   title: {
@@ -73,7 +111,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${helvetica.className} antialiased scroll-smooth`}>
+      <body className={`${sofia.className} antialiased scroll-smooth`}>
         <Providers>
           <Nav />
           {children}
