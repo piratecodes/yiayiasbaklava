@@ -50,12 +50,19 @@ Then, open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```
 yiayiasbaklava/
-├── pages/             # Next.js pages (routing entry points)
-├── components/        # React UI components
-├── styles/            # Global Tailwind styles
-├── public/            # Static assets (images/fonts)
-├── next.config.js     # Custom Next & webpack config
-├── package.json       # Scripts & dependencies
+├── src/                  # Next.js src (project entry points)
+|     ├── app/            # Next.js app (routing entry points)
+|     ├── assets/         # Static assets (images/medias)
+|     ├── components/     # React UI components
+|     ├── components/     # React UI State Management
+|     ├── style/          # Global Tailwind styles
+|     ├── utils/          # Custom Utility Files
+|     ├── middleware.js   # Next.js middleware (route manipulator)
+├── public/               # Public assets (images/fonts)
+├── jsconfig.js           # Custom Next & js config
+├── next.config.js        # Custom Next & webpack config
+├── package.json          # Scripts & dependencies
+├── LICENSE               # Projct LICNSE
 └── README.md
 ```
 
