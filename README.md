@@ -108,6 +108,7 @@ Please follow the existing patterns (React/Tailwind/Emotion) and test your chang
 
 ## 📄 License
 
+**YiayiasBaklava** is a trademark of Yia Yia's Baklava llc, all rights reserved.  
 This project is licensed under the **Apache 2.0 License**.  
 See [LICENSE](LICENSE) for details or read it online at:  
 https://www.apache.org/licenses/LICENSE-2.0
