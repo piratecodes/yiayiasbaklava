@@ -43,11 +43,10 @@ export default function Favourite({home, token}){
                 
                 {/* Main Content */}
                 <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px] px-6 text-center">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"> Your Favourites </h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"> Your Favorites </h1>
                 </div>
             </header>
-            <main className="container md:mt-auto lg:mt-0 ">
-                <p className="lg:mt-10 text-center text-6xl font-bold text-sky-500">Favourite Products</p>
+            <main className="container md:mt-auto lg:mt-0 mb-10">
                 
                 {home.data ? home.data.map((p) => (
                 <div key={p.shop_product.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 items-center justify-between hover:bg-sky-50/75 transition duration-300 ease-in">

@@ -22,3 +22,10 @@ export default async function Favourite(){
 
     return <FavouritePage home={home} token={token} />
 }
+
+export async function generateMetadata({ params }) {
+    return{
+        title: 'Favoite',
+        description: "On this page user can see their favorite product."
+    }
+}

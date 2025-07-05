@@ -121,13 +121,14 @@ export default function Nav() {
           <span><button aria-label="Close Cart" title="Close Cart" className="focus:shadow-outline -mr-1 rounded-full p-2 transition duration-200 hover:bg-deep-purple-50 hover:bg-opacity-30 bg-white" onClick={() => toogleMenu()}><GrClose className="w-5 text-lg text-black" /></button></span>
         </div>
         <hr className='border border-gray-400 my-1 w-11/12 mx-auto ' />
-        <ol className='mt-5 space-y-5 text-white font-bold text-2xl w-11/12 mx-auto'>
+        <ol className='mt-3.5 space-y-3 text-white font-bold text-2xl w-11/12 mx-auto'>
           <li><Link href="/" onClick={handleMenuClick}>Home</Link></li>
           <li><Link href="/about" onClick={handleMenuClick}>About</Link></li>
           <li><Link href="/order" onClick={handleMenuClick}>Order</Link></li>
           <li><Link href="/catering" onClick={handleMenuClick}>Catering</Link></li>
           <li><Link href="/order/giftcard" onClick={handleMenuClick}>Gift Cards</Link></li>
-          <li><Link href="/favourite" onClick={handleMenuClick}>Favorite</Link></li>
+          <li><Link href="/favorite" onClick={handleMenuClick}>Favorite</Link></li>
+          <li><Link href="/vote" onClick={handleMenuClick}>Voting</Link></li>
           <li><Link href="/loyality" onClick={handleMenuClick}>Loyality</Link></li>
           <li><Link href="/corporate" onClick={handleMenuClick}>Corporate Gift</Link></li>
           <li><Link href="/nutrition" onClick={handleMenuClick}>Nutrition</Link></li>
