@@ -94,24 +94,18 @@ export default function CarryoutPackSelectionPage({flavour}) { // Added 'flavour
         {/* Left Side: Box Visualization */}
         <div className="md:w-1/2 bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center justify-center relative border-4 border-sky-500">
           {/* Main Container for the Box and Lid */}
-          <div className="relative w-full max-w-sm rounded-lg overflow-hidden flex flex-col items-center justify-center">
-            {/* The "Lid" part - positioned absolutely above the box body */}
-            <div className="absolute top-0 w-[95%] h-12 bg-white rounded-t-lg shadow-md -translate-y-1/2 transform -rotate-3 origin-bottom-left border border-gray-200 z-0">
-                {/* Inner detail for lid thickness */}
-                <div className="absolute inset-x-0 bottom-0 h-2 bg-gray-100 opacity-75"></div>
-            </div>
+          <div className="relative w-full max-w-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
+           
 
             {/* The "Box Body" - where items sit */}
             <div className={`
-              relative w-full bg-sky-100 rounded-b-lg shadow-xl p-6 flex items-center justify-center min-h-64 pt-12 // pt-12 to push content down from "lid" area
-              ${requiredFlavorCount === 4 ? 'max-w-md' : 'max-w-sm'} 
-            `}>
+              relative w-fit bg-sky-200 rounded-lg shadow-xl p-6 flex items-center justify-center min-h-24  `}> {/* pt-12 to push content down from "lid" area */}
               {/* Conditional grid/flex layout for flavors based on pack size */}
-              {requiredFlavorCount === 4 ? (
-                  <div className="relative z-10 flex flex-row flex-wrap justify-center items-center gap-4 w-full"> {/* Flex for 4-pack */}
+              {requiredFlavorCount === 1 ? (
+                  <div className="relative z-10 flex flex-row flex-wrap justify-center items-center w-fit"> {/* Flex for 4-pack */}
                       {Array.from({ length: requiredFlavorCount }).map((_, index) => (
                           <div key={`box-slot-${index}`} className="relative w-28 h-28 bg-white rounded-lg overflow-hidden shadow-md flex items-center justify-center border border-gray-200"> {/* Individual flavor item slot */}
-                              {flavorsInBox[index] ? (
+                              {flavorsInBox[index] && (
                                   <Image
                                       src={flavorsInBox[index]}
                                       alt={`Selected flavor ${index + 1}`}
@@ -119,17 +113,31 @@ export default function CarryoutPackSelectionPage({flavour}) { // Added 'flavour
                                       objectFit="cover"
                                       sizes="112px" 
                                   />
-                              ) : (
-                                  <span className="text-gray-500 text-xs sm:text-sm">Slot {index + 1}</span>
-                              )}
+                              ) }
+                          </div>
+                      ))}
+                  </div>
+              ) : requiredFlavorCount === 4 ? (
+                  <div className="relative z-10 grid grid-cols-2 gap-4 w-fit"> {/* Flex for 4-pack */}
+                      {Array.from({ length: requiredFlavorCount }).map((_, index) => (
+                          <div key={`box-slot-${index}`} className="relative w-28 h-28 bg-white rounded-lg overflow-hidden shadow-md flex items-center justify-center border border-gray-200"> {/* Individual flavor item slot */}
+                              {flavorsInBox[index] && (
+                                  <Image
+                                      src={flavorsInBox[index]}
+                                      alt={`Selected flavor ${index + 1}`}
+                                      fill
+                                      objectFit="cover"
+                                      sizes="112px" 
+                                  />
+                              ) }
                           </div>
                       ))}
                   </div>
               ) : ( // For 6-pack and 9-pack (or any other, default to 3 columns)
-                  <div className="relative z-10 grid grid-cols-3 gap-4 p-2 w-full"> {/* Grid for 6/9-pack */}
+                  <div className="relative z-10 grid grid-cols-3 gap-4 p-2 w-auto"> {/* Grid for 6/9-pack */}
                       {Array.from({ length: requiredFlavorCount }).map((_, index) => (
                           <div key={`box-slot-${index}`} className="relative w-28 h-28 bg-white rounded-lg overflow-hidden shadow-md flex items-center justify-center border border-gray-200"> {/* Individual flavor item slot */}
-                              {flavorsInBox[index] ? (
+                              {flavorsInBox[index] && (
                                   <Image
                                       src={flavorsInBox[index]}
                                       alt={`Selected flavor ${index + 1}`}
@@ -137,9 +145,7 @@ export default function CarryoutPackSelectionPage({flavour}) { // Added 'flavour
                                       objectFit="cover"
                                       sizes="112px" 
                                   />
-                              ) : (
-                                  <span className="text-gray-500 text-xs sm:text-sm">Slot {index + 1}</span>
-                              )}
+                              ) }
                           </div>
                       ))}
                   </div>

@@ -36,7 +36,7 @@ export default async function GiftCardTemplate() {
 
   return (
     <div className="container p-6">
-      <Card card={data.data} />
+      <Card card={data} />
     </div>
   );
 }

@@ -85,10 +85,10 @@ export default function BaklavaCheckout() {
                 <div className="flex items-start text-sm text-black">
                   <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="font-medium">Baklava Palace</div>
+                    <div className="font-medium">Yia Yia’s Baklava</div>
                     <div className="text-gray-600">
-                      1498 Ave Roosevelt Plaza Coparra,<br />
-                      Ste 14, Guaynabo, Puerto Rico 00968
+                      252 bethlehem pike,<br />
+                      Colmar pa 18915
                     </div>
                   </div>
                 </div>
@@ -299,8 +299,8 @@ export default function BaklavaCheckout() {
               {/* Sign in to earn rewards */}
               <div className="mb-6 p-3 bg-sky-50 rounded-lg">
                 <div className="flex items-center text-sm">
-                  <div className="w-6 h-6 bg-amber-400 rounded-full mr-2 flex-shrink-0"></div>
-                  <span className="font-medium">Sign in to earn Crumbs for this order!</span>
+                  <div className="w-6 h-6 bg-sky-500 rounded-full mr-2 flex-shrink-0"></div>
+                  <span className="font-medium">●	Sign in to earn Points for this order! </span>
                 </div>
               </div>
 
