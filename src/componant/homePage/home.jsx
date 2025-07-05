@@ -100,8 +100,8 @@ export default function Home({home, token}) {
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
             <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
-              {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button> */}
-              <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-500 hover:text-white transition duration-300">Know More</button>
+              <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-500 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
+              <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-300 hover:text-black transition duration-300 group-hover:bg-sky-500 group-hover:text-white cursor-pointer">Know More</button>
             </span>
           </div>
           <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
@@ -111,8 +111,8 @@ export default function Home({home, token}) {
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
             <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
-              {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button> */}
-              <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-500 hover:text-white transition duration-300">Know More</button>
+              <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-500 transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
+              <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-300 hover:text-black transition duration-300 group-hover:bg-sky-500 group-hover:text-white cursor-pointer">Know More</button>
             </span>
           </div>
         </div></Slide>
@@ -128,7 +128,7 @@ export default function Home({home, token}) {
               {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
               <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
                 <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-500 hover:text-white transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
-                {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</button> */}
+                <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-300 hover:text-black transition duration-300 group-hover:bg-sky-500 group-hover:text-white cursor-pointer">Know More</button>
               </span>
             </div>
             <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
@@ -139,7 +139,7 @@ export default function Home({home, token}) {
               {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
               <span className='flex flex-row space-x-1 md:space-x-3.5 mt-3.5 lg:mt-7'>
                 <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-500 hover:text-white transition duration-300 cursor-pointer" onClick={()=> addtofav(p.product_id)}>Add to Favourite</button>
-                {/* <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">Order Now</button> */}
+                <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-300 hover:text-black transition duration-300 group-hover:bg-sky-500 group-hover:text-white cursor-pointer">Know More</button>
               </span>
             </div>
           </div></Slide>
