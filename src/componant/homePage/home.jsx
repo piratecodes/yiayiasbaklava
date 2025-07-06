@@ -95,7 +95,7 @@ export default function Home({home, token}) {
         <p className=" text-center text-[45px] lg:text-6xl font-bold text-sky-500">Weekly Creations</p>
         
         {home.data.weekly_products ? home.data.weekly_products.map((p, q) => (
-          (q+1)%2 == 0? <Slide triggerOnce direction='right'><div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-8 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+          (q+1)%2 == 0? <Slide key={q} triggerOnce direction='right'><div className="group mx-auto mt-10 px-5 lg:px-8 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
           <div className='items-center-safe pl-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
@@ -105,7 +105,7 @@ export default function Home({home, token}) {
             </span>
           </div>
           <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
-        </div></Slide> : <Slide triggerOnce direction='left'><div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-8 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+        </div></Slide> : <Slide key={q} triggerOnce direction='left'><div className="group mx-auto mt-10 px-5 lg:px-8 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
           <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
           <div className='items-center-safe pr-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
@@ -122,7 +122,7 @@ export default function Home({home, token}) {
         <Link href={"https://maps.app.goo.gl/1PVrpTAXcL7siYKP6"} target='_blank' className="flex flex-row items-center my-3 text-center p-2 rounded-3xl max-w-xs mx-auto space-x-1.5 font-medium text-lg"><FaMapMarkerAlt className='fill-gray-900' /> <span>Visit Your Local Store Near You</span></Link>
         
         {home.data.classic_products ? home.data.classic_products.map((p, q) => (
-          (q+1)%2 == 0?  <Slide triggerOnce direction="right"><div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+          (q+1)%2 == 0?  <Slide key={q} triggerOnce direction="right"><div className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
             <div className='items-center-safe pr-2'>
               <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
               {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
@@ -132,7 +132,7 @@ export default function Home({home, token}) {
               </span>
             </div>
             <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
-          </div></Slide>: <Slide triggerOnce direction="left"><div key={p.product_id} className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
+          </div></Slide>: <Slide key={q} triggerOnce direction="left"><div className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
             <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
             <div className='items-center-safe pr-2'>
               <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>

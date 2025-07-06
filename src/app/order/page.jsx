@@ -15,7 +15,7 @@ export default function Orders(){
         
         <div className="grid grid-cols-2 gap-3.5 md:gap-6">
           {/* Delivery Card */}
-          <Link href="/login" className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
+          <Link href="/order/delivery" className="bg-sky-50 rounded-3xl p-12 border-4 border-black hover:shadow-lg transition-shadow cursor-pointer">
             <figure className="flex flex-col items-center text-center">
               <span className='relative flex justify-center w-[170px] h-[120px]'><Image src={deliveryTruck} alt="Delivery" fill objectFit='contain' /></span>
               <figcaption className="mt-5 text-3xl font-bold text-gray-900">Delivery</figcaption>

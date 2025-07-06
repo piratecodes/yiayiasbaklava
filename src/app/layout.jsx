@@ -1,6 +1,6 @@
 import localfont from "next/font/local"
 import Script from 'next/script'
-import Head from "next/head";
+import NextTopLoader from 'nextjs-toploader';
 import { Analytics } from "@vercel/analytics/next"
 import "@/style/globals.css";
 
@@ -135,6 +135,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${sofia.className} antialiased scroll-smooth scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-sky-500 scrollbar-corner-sky-800 scrollbar-track-sky-200`}>
         <Providers>
+          <NextTopLoader   color="#00a6f4"   initialPosition={0.08}   crawlSpeed={200}   height={3}   crawl={true}   showSpinner={false}   easing="ease"   speed={200}   shadow="0 0 10px #f1a4c7,0 0 5px #f1a4c7" />
           <Nav />
           {children}
           <Analytics />
