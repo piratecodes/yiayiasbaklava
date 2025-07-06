@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@plugin 'tailwind-scrollbar'{
+    nocompatible: true;
+    preferredStrategy: 'pseudoelements';
+};
+
 @utility container {
     margin-inline: auto;
 }

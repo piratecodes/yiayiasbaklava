@@ -133,7 +133,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content="A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped" />
         <meta name="twitter:image" content="https://yiayiasbaklava.com/wp-content/uploads/2025/02/unnamed.webp" />
       </head>
-      <body className={`${sofia.className} antialiased scroll-smooth`}>
+      <body className={`${sofia.className} antialiased scroll-smooth scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-sky-500 scrollbar-corner-sky-800 scrollbar-track-sky-200`}>
         <Providers>
           <Nav />
           {children}
