@@ -13,9 +13,6 @@ const Footer = () => {
         <div className="flex flex-row lg:flex-col justify-center gap-8 mb-12 max-w-4xl mx-auto">
           {/* First column of navigation links */}
           <div className="flex flex-col lg:flex-row items-start gap-4 mx-auto">
-            <h6 className="text-sky-500 font-bold">
-              Company
-            </h6>
             <Link href="/order" className="text-black hover:text-gray-600 font-medium">
               Order
             </Link>
