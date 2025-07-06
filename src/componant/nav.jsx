@@ -130,6 +130,7 @@ export default function Nav() {
           <li><Link href="/favorite" onClick={handleMenuClick}>Favorite</Link></li>
           <li><Link href="/vote" onClick={handleMenuClick}>Voting</Link></li>
           <li><Link href="/loyality" onClick={handleMenuClick}>Loyality</Link></li>
+          <li><Link href="/stores" onClick={handleMenuClick}>Store Locations</Link></li>
           <li><Link href="/corporate" onClick={handleMenuClick}>Corporate Gift</Link></li>
           <li><Link href="/nutrition" onClick={handleMenuClick}>Nutrition</Link></li>
         </ol>

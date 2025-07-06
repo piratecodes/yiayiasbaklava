@@ -2,10 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from 'next/navigation';
 
-
-function StoreLocator({store}) {
+function StoreLocator({storeApi}){
   const router = useRouter();
-  const pathname = usePathname()
+  const pathname = usePathname();
   const mapRef = useRef(null);
   const initialized = useRef(false);
   const [map, setMap] = useState(null);
@@ -13,66 +12,11 @@ function StoreLocator({store}) {
   const [infoWindow, setInfoWindow] = useState(null);
   const [selectedStore, setSelectedStore] = useState(null);
 
-  const stores = store.data
-
-//   const stores = [
-//     {
-//       id: 1,
-//       name: "Downtown Store",
-//       description: "Fresh pizza ready in 15 mins",
-//       latitude: 40.7589,
-//       longitude: -73.9851,
-//       image: "/store1-icon.png",
-//     },
-//     {
-//       id: 2,
-//       name: "Brooklyn Branch",
-//       description: "Gourmet burgers - 20 mins prep",
-//       latitude: 40.6892,
-//       longitude: -73.9442,
-//       image: "/store2-icon.png",
-//     },
-//     {
-//       id: 3,
-//       name: "Queens Location",
-//       description: "Asian fusion - 25 mins",
-//       latitude: 40.7282,
-//       longitude: -73.7949,
-//       image: "/store3-icon.png",
-//     },
-//     {
-//       id: 4,
-//       name: "Bronx Store",
-//       description: "Italian cuisine - 18 mins",
-//       latitude: 40.8448,
-//       longitude: -73.8648,
-//       image: "/store4-icon.png",
-//     },
-//     {
-//       id: 5,
-//       name: "Staten Island",
-//       description: "Mexican food - 22 mins",
-//       latitude: 40.5795,
-//       longitude: -74.1502,
-//       image: "/store5-icon.png",
-//     },
-//   ];
-
-  // useEffect(async()=>{
-  //   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`,{
-  //     method: "POST",
-  //     headers: {
-  //     Accept: "application/json",
-  //     Authorization: `Bearer ${jwt}`,
-  //     "Content-Type": "application/json",
-  //     },
-  //     body: `{ "search": "Kimberton Whole Foods" }`,
-  //   })
-  //   const stores = response.json().data;
-  // },[])
+  //Api data Convrsion    
+  const stores = storeApi.data
 
   useEffect(() => {
-    if (initialized.current) return;
+    if (!stores.length || initialized.current) return;
     initialized.current = true;
 
     const initMap = () => {
@@ -80,20 +24,18 @@ function StoreLocator({store}) {
 
       const bounds = new window.google.maps.LatLngBounds();
       stores.forEach((store) => {
-        bounds.extend(new window.google.maps.LatLng(store.latitude, store.longitude));
+        bounds.extend(new window.google.maps.LatLng(parseFloat(store.latitude), parseFloat(store.longitude)));
       });
 
       const mapInstance = new window.google.maps.Map(mapRef.current, {
         zoom: 10,
-        center: { latitude: 40.7589, longitude: -73.9851 },
+        center: { lat: parseFloat(stores[0].latitude), lng: parseFloat(stores[0].longitude) },
         mapTypeId: "roadmap",
-        styles: [
-          {
-            featureType: "poi",
-            elementType: "labels",
-            stylers: [{ visibility: "off" }],
-          },
-        ],
+        styles: [{
+          featureType: "poi",
+          elementType: "labels",
+          stylers: [{ visibility: "off" }],
+        }],
       });
 
       mapInstance.fitBounds(bounds);
@@ -104,15 +46,12 @@ function StoreLocator({store}) {
 
       const markerInstances = stores.map((store) => {
         const marker = new window.google.maps.Marker({
-          position: { latitude: store.latitude, longitude: store.longitude },
+          position: { lat: parseFloat(store.latitude), lng: parseFloat(store.longitude) },
           map: mapInstance,
           title: store.name,
           icon: {
             url: store.image,
-            scaledSize:
-              window.innerWidth <= 768
-                ? new window.google.maps.Size(40, 40)
-                : new window.google.maps.Size(50, 50),
+            scaledSize: window.innerWidth <= 768 ? new window.google.maps.Size(40, 40) : new window.google.maps.Size(50, 50),
             origin: new window.google.maps.Point(0, 0),
             anchor: new window.google.maps.Point(25, 25),
           },
@@ -130,6 +69,10 @@ function StoreLocator({store}) {
       });
 
       setMarkers(markerInstances);
+
+      window.handleOrderNow = (storeId) => {
+        router.push(`${pathname}/${storeId}`);
+      };
     };
 
     const loadGoogleMaps = () => {
@@ -154,10 +97,7 @@ function StoreLocator({store}) {
         if (store) {
           marker.setIcon({
             url: store.image,
-            scaledSize:
-              window.innerWidth <= 768
-                ? new window.google.maps.Size(40, 40)
-                : new window.google.maps.Size(50, 50),
+            scaledSize: window.innerWidth <= 768 ? new window.google.maps.Size(40, 40) : new window.google.maps.Size(50, 50),
             origin: new window.google.maps.Point(0, 0),
             anchor: new window.google.maps.Point(25, 25),
           });
@@ -167,30 +107,26 @@ function StoreLocator({store}) {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [stores, markers]);
 
   const showInfoWindow = (store, marker, infoWindowInstance, mapInstance) => {
     const content = `
       <div class="p-4 max-w-xs">
         <h3 class="font-bold text-lg mb-2">${store.name}</h3>
-        <p class="text-gray-600 mb-3">${store.description}</p>
-        <button 
-          onclick="handleOrderNow(${store.id})" 
-          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+        <p class="text-gray-600 mb-3">${store.address}</p>
+        <a 
+          href="https://www.google.com/maps/dir/?api=1&destination=${parseFloat(store.latitude)},${parseFloat(store.longitude)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-sky-500 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
         >
-          Order Now
-        </button>
+          Get Directions
+        </a>
       </div>
     `;
-
     infoWindowInstance.setContent(content);
     infoWindowInstance.open(mapInstance, marker);
     setSelectedStore(store.id);
-
-    window.handleOrderNow = (storeId) => {
-      // alert(`Order from store ${storeId}`);
-      router.push(`${pathname}/${storeId}`)
-    };
   };
 
   const handleStoreClick = (store) => {
@@ -198,7 +134,7 @@ function StoreLocator({store}) {
 
     const markerData = markers.find((m) => m.storeId === store.id);
     if (markerData) {
-      map.setCenter({ latitude: store.latitude, longitude: store.longitude });
+      map.setCenter({ lat: parseFloat(store.latitude), lng: parseFloat(store.longitude) });
       map.setZoom(15);
       if (infoWindow) {
         showInfoWindow(store, markerData.marker, infoWindow, map);
@@ -207,56 +143,35 @@ function StoreLocator({store}) {
   };
 
   const handleOrderNow = (storeId) => {
-    // alert(`Order from store ${storeId}`);
-    router.push(`${pathname}/${storeId}`)
+    router.push(`${pathname}/${storeId}`);
   };
 
   return (
     <React.Fragment>
-      
       <header className="relative px-4 py-16 bg-sky-500">
-        <h1 className="max-w-7xl text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white">Choose Your <span className="text-amber-300">Pickup</span> Location</h1>
+        <h1 className="max-w-7xl text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white">Choose Your <b className="text-amber-300">Store</b> Location</h1>
         <p className="max-w-7xl text-center mt-2 text-lg lg:text-x text-white"> Find the perfect spot to pick up your fresh baklava delights. </p>
-
-        {/* Wavy Bottom Border */}
         <div className="absolute bottom-0 left-0 right-0">
-            <svg 
-            viewBox="0 0 1200 120" 
-            fill="none" 
-            className="w-full h-20"
-            preserveAspectRatio="none"
-            >
-            <path 
-                d="M0,60 C300,20 600,100 900,60 C1050,30 1150,80 1200,60 L1200,120 L0,120 Z" 
-                fill="white"
-            />
-            </svg>
+          <svg viewBox="0 0 1200 120" fill="none" className="w-full h-20" preserveAspectRatio="none">
+            <path d="M0,60 C300,20 600,100 900,60 C1050,30 1150,80 1200,60 L1200,120 L0,120 Z" fill="white" />
+          </svg>
         </div>
       </header>
-        
 
       <section className="my-10">
         <div className="max-w-7xl mx-auto p-4">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div
-                ref={mapRef}
-                className="w-full"
-                style={{ height: "600px", minHeight: "400px" }}
-              ></div>
+              <div ref={mapRef} className="w-full" style={{ height: "600px", minHeight: "400px" }}></div>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800">Our Stores</h2>
+              <h2 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800">Our Stores</h2>
               <div className="space-y-4 overflow-y-auto max-h-[520px]">
                 {stores.map((store) => (
                   <div
                     key={store.id}
-                    className={`p-4 border rounded-lg cursor-pointer transition-all hover:shadow-md ${
-                      selectedStore === store.id
-                        ? "border-blue-500 bg-blue-50"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all hover:shadow-md ${selectedStore === store.id ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:border-gray-300"}`}
                     onClick={() => handleStoreClick(store)}
                   >
                     <div className="flex items-start space-x-4">
@@ -271,16 +186,8 @@ function StoreLocator({store}) {
                       />
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900">{store.name}</h3>
-                        <p className="text-gray-600 text-sm mt-1">{store.description}</p>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleOrderNow(store.id);
-                          }}
-                          className="mt-3 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                        >
-                          Order Now
-                        </button>
+                        <p className="text-gray-600 text-sm mt-1">{store.address}</p>
+                        <p className="text-gray-600 text-sm mt-1">{store.phone}</p>
                       </div>
                     </div>
                   </div>

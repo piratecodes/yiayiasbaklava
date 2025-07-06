@@ -16,7 +16,7 @@ async function storePage() {
 
     const data = await res.json()
 
-  return <StoreLocator store={data} />
+  return <StoreLocator storeApi={data} />
 }
 
 export default storePage;
