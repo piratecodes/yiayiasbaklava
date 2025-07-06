@@ -98,8 +98,7 @@ export default function CarryoutPackSelectionPage({flavour}) { // Added 'flavour
            
 
             {/* The "Box Body" - where items sit */}
-            <div className={`
-              relative w-fit bg-sky-200 rounded-lg shadow-xl p-6 flex items-center justify-center min-h-24  `}> {/* pt-12 to push content down from "lid" area */}
+            <div className={` relative w-fit bg-sky-200 rounded-lg shadow-xl p-6 flex items-center justify-center min-h-24  `}> {/* pt-12 to push content down from "lid" area */}
               {/* Conditional grid/flex layout for flavors based on pack size */}
               {requiredFlavorCount === 1 ? (
                   <div className="relative z-10 flex flex-row flex-wrap justify-center items-center w-fit"> {/* Flex for 4-pack */}

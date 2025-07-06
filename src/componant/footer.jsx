@@ -16,48 +16,20 @@ const Footer = () => {
             <h6 className="text-sky-500 font-bold">
               Company
             </h6>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
+            <Link href="/order" className="text-black hover:text-gray-600 font-medium">
               Order
             </Link>
             <Link href="#" className="text-black hover:text-gray-600 font-medium">
               Our story
             </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Rewards
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
+            <Link href="/nutrition" className="text-black hover:text-gray-600 font-medium">
               Nutrition & Allergy
             </Link>
             <Link href="#" className="text-black hover:text-gray-600 font-medium">
               Support
             </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Gift Card Balance
-            </Link>
-          </div>
-
-          {/* Second column of navigation links */}
-          <div className="flex flex-col lg:flex-row items-start gap-4 mx-auto">
-            <h6 className="text-sky-500 font-bold">
-              Get Involved
-            </h6>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Press
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Collaborate
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Franchising
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Franchise Store Jobs
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              HQ Careers
-            </Link>
-            <Link href="#" className="text-black hover:text-gray-600 font-medium">
-              Crumbl Cares
+            <Link href="/login" className="text-black hover:text-gray-600 font-medium">
+              Login
             </Link>
           </div>
         </div>

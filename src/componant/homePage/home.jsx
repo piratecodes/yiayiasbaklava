@@ -80,8 +80,8 @@ export default function Home({home, token}) {
           <path className="fill-white" d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"></path>
         </svg>
         <div className='absolute left-5 md:left-10 md:inset-x-10 bottom-1/6 z-30'>
-          <p className='font-semibold font-mono text-md md:text-xl lg:text-2xl text-center text-white'>Retail pieces are larger than shown</p>
-          <Link href="/order" className={`mt-1.5 flex items-center w-fit md:mx-auto px-4 py-2 text-md font-medium hover:text-gray-60 rounded-4xl bg-black text-white`}>
+          <p className='font-semibold text-md md:text-xl lg:text-2xl text-left text-white'>Retail pieces are larger than shown</p>
+          <Link href="/order" className={`mt-2.5 flex items-center w-fit px-4 py-2 text-md font-medium hover:text-gray-60 rounded-4xl bg-black text-white`}>
               <svg className="w-4 h-4 mr-2 fill-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512">
                 <path d="M527.79 288H290.5l158.03 158.03c6.04 6.04 15.98 6.53 22.19.68 38.7-36.46 65.32-85.61 73.13-140.86 1.34-9.46-6.51-17.85-16.06-17.85zm-15.83-64.8C503.72 103.74 408.26 8.28 288.8.04 279.68-.59 272 7.1 272 16.24V240h223.77c9.14 0 16.82-7.68 16.19-16.8zM224 288V50.71c0-9.55-8.39-17.4-17.84-16.06C86.99 51.49-4.1 155.6.14 280.37 4.5 408.51 114.83 513.59 243.03 511.98c50.4-.63 96.97-16.87 135.26-44.03 7.9-5.6 8.42-17.23 1.57-24.08L224 288z" />
               </svg>
@@ -91,7 +91,7 @@ export default function Home({home, token}) {
       </header>
 
       <main className="container md:mt-10 lg:mt-0 ">
-        <p className="lg:mt-10 text-center text-[45px] font-bold text-sky-500">{home.data.weekly_timeline ? formatWeekRange(home.data.weekly_timeline) : "This Week's Special"}</p>
+        <p className="lg:mt-10 text-center text-[45px] lg:text-6xl font-bold text-sky-500">{home.data.weekly_timeline ? formatWeekRange(home.data.weekly_timeline) : "This Week's Special"}</p>
         <h1 className="mt-4 md:mt-8 mb-8 text-center py-2 px-4 rounded-3xl bg-sky-500 text-white w-fit mx-auto font-normal text-2xl">Weekly Creations</h1>
         
         {home.data.weekly_products ? home.data.weekly_products.map((p, q) => (
@@ -118,7 +118,7 @@ export default function Home({home, token}) {
         </div></Slide>
         )): <p className='text-center text-2xl md:text-4xl lg:text-5xl font-semibold'>SORRY!! No Records Found</p>}
 
-        <p className="mt-24 ml-1/12 text-center text-5xl font-bold text-sky-500">Yia Yia's Classic</p>
+        <p className="mt-24 ml-1/12 text-center text-5xl lg:text-6xl font-bold text-sky-500">Yia Yia's Classic</p>
         <Link href={"https://maps.app.goo.gl/1PVrpTAXcL7siYKP6"} target='_blank' className="flex flex-row items-center my-3 text-center p-2 rounded-3xl max-w-xs mx-auto space-x-1.5 font-medium text-lg"><FaMapMarkerAlt className='fill-gray-900' /> <span>Visit Your Local Store Near You</span></Link>
         
         {home.data.classic_products ? home.data.classic_products.map((p, q) => (
