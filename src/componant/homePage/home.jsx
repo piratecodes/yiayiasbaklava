@@ -104,9 +104,9 @@ export default function Home({home, token}) {
               <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-300 hover:text-black transition duration-300 group-hover:bg-sky-500 group-hover:text-white cursor-pointer">Know More</button>
             </span>
           </div>
-          <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+          <figure className="relative h-40 lg:h-96 w-full rounded-full drop-shadow-[0_0_30px] drop-shadow-yellow-200"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
         </div></Slide> : <Slide key={q} triggerOnce direction='left'><div className="group mx-auto mt-10 px-5 lg:px-8 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
-          <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+          <figure className="relative h-40 lg:h-96 w-full rounded-full drop-shadow-[0_0_30px] drop-shadow-yellow-200"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
           <div className='items-center-safe pr-2'>
             <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
             {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}
@@ -131,9 +131,9 @@ export default function Home({home, token}) {
                 <button className="px-1.5 md:px-3 py-1 rounded-2xl text-[10px] md:text-md lg:text-lg border border-cyan-800 group-hover:border group-hover:border-cyan-800 group-hover:translate-x-5 hover:bg-sky-300 hover:text-black transition duration-300 group-hover:bg-sky-500 group-hover:text-white cursor-pointer">Know More</button>
               </span>
             </div>
-            <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+            <figure className="relative h-40 lg:h-96 w-full rounded-full drop-shadow-[0_0_30px] drop-shadow-yellow-200"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
           </div></Slide>: <Slide key={q} triggerOnce direction="left"><div className="group mx-auto mt-10 px-5 lg:px-10 max-w-5xl rounded-3xl grid grid-cols-2 gap-10 items-center hover:bg-sky-50/75 transition duration-300 ease-in">
-            <figure className="relative h-40 lg:h-96 w-full rounded-full radial"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
+            <figure className="relative h-40 lg:h-96 w-full rounded-full drop-shadow-[0_0_30px] drop-shadow-yellow-200"><Image src={p.images[0].url} alt={p.name} draggable="false" fill objectFit='contain'/></figure>
             <div className='items-center-safe pr-2'>
               <p className="text-2xl md:text-4xl lg:text-5xl font-semibold">{p.name}</p>
               {/* <p className="mt-2 pl-1 text-md md:text-lg lg:text-xl font-semibold text-gray-600">Price: ${p.price}</p> */}

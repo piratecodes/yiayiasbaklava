@@ -34,6 +34,3 @@ html {
   text-shadow: none;
 }
 
-.radial{
-    background: radial-gradient(ellipse at center, #fef08a, #fefce8, transparent);
-}
