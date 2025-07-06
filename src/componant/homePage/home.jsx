@@ -91,7 +91,7 @@ export default function Home({home, token}) {
       </header>
 
       <main className="container md:mt-10 lg:mt-0 ">
-        <h1 className="mt-4 md:mt-8 mb-4 text-center py-2 px-4 rounded-3xl bg-sky-500 text-white w-fit mx-auto font-normal text-3xl">{home.data.weekly_timeline ? formatWeekRange(home.data.weekly_timeline) : "This Week's Special"}</h1>
+        <h1 className="mt-4 md:mt-8 mb-4 text-center py-2 px-4 rounded-3xl bg-sky-500 text-white w-fit mx-auto font-normal text-😂😂😂xl">{home.data.weekly_timeline ? formatWeekRange(home.data.weekly_timeline) : "This Week's Special"}</h1>
         <p className=" text-center text-[45px] lg:text-6xl font-bold text-sky-500">Weekly Creations</p>
         
         {home.data.weekly_products ? home.data.weekly_products.map((p, q) => (
