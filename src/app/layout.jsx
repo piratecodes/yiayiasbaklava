@@ -1,5 +1,6 @@
 import localfont from "next/font/local"
 import Script from 'next/script'
+import Head from "next/head";
 import { Analytics } from "@vercel/analytics/next"
 import "@/style/globals.css";
 
@@ -111,6 +112,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Home - Yia Yia&#039;s Baklava" />
+        <meta property="og:description" content="A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped" />
+        <meta property="og:url" content="https://yiayiasbaklava.com/" />
+        <meta property="og:site_name" content="Yia Yia\&#039;s Baklava" />
+        <meta property="og:updated_time" content="2025-06-23T13:45:26+00:00" />
+        <meta property="og:image" content="https://yiayiasbaklava.com/wp-content/uploads/2025/02/unnamed.webp" />
+        <meta property="og:image:secure_url" content="https://yiayiasbaklava.com/wp-content/uploads/2025/02/unnamed.webp" />
+        <meta property="og:image:width" content="601" />
+        <meta property="og:image:height" content="613" />
+        <meta property="og:image:alt" content="Home" />
+        <meta property="og:image:type" content="image/webp" />
+        <meta property="article:published_time" content="2023-12-08T12:39:44+00:00" />
+        <meta property="article:modified_time" content="2025-06-23T13:45:26+00:00" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home - Yia Yia&#039;s Baklava" />
+        <meta name="twitter:description" content="A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped" />
+        <meta name="twitter:image" content="https://yiayiasbaklava.com/wp-content/uploads/2025/02/unnamed.webp" />
+      </head>
       <body className={`${sofia.className} antialiased scroll-smooth`}>
         <Providers>
           <Nav />
