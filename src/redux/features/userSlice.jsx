@@ -248,6 +248,7 @@ export const logoutUser = createAsyncThunk(
 export const userSlice = createSlice({
     name: "user",
     initialState: {
+        id: "",
         email: "",
         phone:null,
         name: "",
@@ -268,6 +269,7 @@ export const userSlice = createSlice({
     reducers: {
         // Reducer comes here
         clearState: (state) => {
+            state.id = "";
             state.email = "";
             state.phone = null;
             state.name = "";
@@ -296,6 +298,7 @@ export const userSlice = createSlice({
             state.isSuccess = true;
             state.isAuthenticated = true;
             state.isInitialized = true;
+            state.id = payload.data.id;
             state.email = payload.data.email;
             state.phone = payload.data.phone;
             state.name = payload.data.name;
@@ -321,6 +324,7 @@ export const userSlice = createSlice({
         });
         builder.addCase(loginUser.fulfilled,(state, { payload }) => {
             console.log('loginData', payload)
+            state.id = payload.data.id;
             state.email = payload.data.email;
             state.phone = payload.data.phone;
             state.name = payload.data.name;
@@ -359,6 +363,7 @@ export const userSlice = createSlice({
             state.isSuccess = true;
             state.isAuthenticated = true;
             state.isInitialized = true;
+            state.id = payload.data.id;
             state.email = payload.data.email;
             state.phone = payload.data.phone;
             state.name = payload.data.name;
@@ -392,6 +397,7 @@ export const userSlice = createSlice({
             state.isUpdateSuccess = true || true;
             state.isAuthenticated = true;
             state.isInitialized = true;
+            state.id = payload.data.id;
             state.email = payload.data.email;
             state.phone = payload.data.phone;
             state.name = payload.data.name;
@@ -416,6 +422,7 @@ export const userSlice = createSlice({
 
         // Logout User
         builder.addCase(logoutUser.fulfilled, (state) => {
+            Stethoscope.id = "";
             state.email = "";
             state.phone = null;
             state.name = "";
@@ -434,6 +441,7 @@ export const userSlice = createSlice({
         });
         builder.addCase(logoutUser.rejected, (state) => {
             // Even if logout fails, clear the state
+            state.id = "";
             state.email = "";
             state.phone = null;
             state.name = "";
@@ -461,6 +469,7 @@ export const userSlice = createSlice({
             state.isInitialized = true;
             
             if (payload && payload.data) {
+                state.id = payload.data.id || null;
                 state.email = payload.data.email || "";
                 state.phone = payload.data.phone || null;
                 state.name = payload.data.name || "";

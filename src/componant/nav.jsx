@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { userSelector } from '@/redux/features/userSlice'
 
 import { GrCart, GrClose } from 'react-icons/gr'
+import { ShoppingBag } from 'lucide-react';
 import logo from '@/assets/logo.png'
 
 export default function Nav() {
@@ -125,7 +126,7 @@ export default function Nav() {
             </button>
 
             {/* Logo */}
-            <div className="relative flex-1 flex justify-center pl-3.5 lg:pl-0 w-56 md:w-72 lg:w-96 h-6 md:h-10 lg:h-12">
+            <div className="relative ml-2.5 flex-1 flex justify-center pl-3.5 lg:pl-0 w-56 md:w-72 lg:w-96 h-6 md:h-10 lg:h-12">
               <Link href="/" className="flex items-center"> <Image src={logo} alt="Yia Yia's Baklava" fill objectFit='contain' /> </Link>
             </div>
 
@@ -140,13 +141,8 @@ export default function Nav() {
                 </svg>
                 Download App
               </Link>
-              <button onClick={toogleCart}
-                className={`inline-flex items-center px-4 py-2 text-md font-medium hover:text-gray-60 rounded-4xl transform transition-colors ease-in ${scrollPosition > 50 ? 'bg-sky-500/75 text-white' : 'bg-transparent text-gray-800'}`}
-              >
-                <svg className="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512">
-                  <path d="M527.79 288H290.5l158.03 158.03c6.04 6.04 15.98 6.53 22.19.68 38.7-36.46 65.32-85.61 73.13-140.86 1.34-9.46-6.51-17.85-16.06-17.85zm-15.83-64.8C503.72 103.74 408.26 8.28 288.8.04 279.68-.59 272 7.1 272 16.24V240h223.77c9.14 0 16.82-7.68 16.19-16.8zM224 288V50.71c0-9.55-8.39-17.4-17.84-16.06C86.99 51.49-4.1 155.6.14 280.37 4.5 408.51 114.83 513.59 243.03 511.98c50.4-.63 96.97-16.87 135.26-44.03 7.9-5.6 8.42-17.23 1.57-24.08L224 288z" />
-                </svg>
-                Cart
+              <button onClick={toogleCart} className={`inline-flex items-center px-3 py-1 text-md font-medium hover:text-gray-60 rounded-4xl transform transition-colors ease-in ${scrollPosition > 50 ? 'bg-sky-500/75 text-white' : 'bg-transparent text-gray-800'}`}>
+                <ShoppingBag width={25} height={25} className='pr-1.5' /> Bag
               </button>
             </div>
           </div>
@@ -179,8 +175,8 @@ export default function Nav() {
         {/* cart */}
         <aside ref={ref3} className="absolute inset-y-0 right-0 flex flex-col w-full h-screen z-30 md:w-4/6 lg:w-1/4 bg-sky-500/95 md:rounded-l-4xl transition ease-linear duration-300 translate-x-full">
           <div className='flex justify-between items-center h-10 w-5/6 my-2.5 mx-auto'>
-              <span><label className='font-semibold text-2xl text-white'> Shopping Cart </label> </span>
-              <span><button aria-label="Close Cart" title="Close Cart" className="rounded-full p-1 bg-sky-300 hover:bg-sky-200" onClick={toogleCart}><GrClose className="w-5 text-lg text-gray-600 dark:text-gray-100" /></button></span>
+              <label className='font-semibold text-2xl text-white'> Shopping Bag </label> 
+              <button aria-label="Close Cart" title="Close Cart" className="rounded-full p-1.5 bg-sky-300 hover:bg-sky-200" onClick={toogleCart}><GrClose className="text-lg text-gray-100" /></button>
           </div>
           <hr className='border-b-1.5 border-gray-600 mb-1 mt-1 ' />
           <div className='sm:flex w-full h-10 mt-2 px-5 place-content-center items-center justify-between'>
@@ -210,7 +206,7 @@ export default function Nav() {
       </nav>
 
       {/* Flying Cart button */}
-      <button onClick={toogleCart} className='fixed lg:hidden z-[999] bottom-5 right-5 p-3 rounded-full bg-sky-500 text-white text-2xl'><GrCart /></button>
+      { !isCartOpen && <button onClick={toogleCart} className='fixed lg:hidden z-40 bottom-5 right-5 p-3 rounded-full bg-sky-500 text-white text-2xl'><ShoppingBag width={25} height={25} /></button> }
       
     </React.Fragment>
   );

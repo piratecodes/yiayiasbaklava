@@ -1,21 +1,21 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Description, Dialog, DialogPanel, DialogTitle, Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import { RiCoinsFill } from "react-icons/ri";
+import { RiCoinsFill, RiCameraFill, RiUploadCloudFill, RiImageFill } from "react-icons/ri";
 import { showSuccess, showError } from '@/utils/toast';
 
 //Redux profilesetup
 import { useSelector, useDispatch } from 'react-redux';
 import { clearState, logoutUser, userSelector, updateProfile } from '@/redux/features/userSlice'
 
-
 export default function Dashboard(){
     const router = useRouter();
     //Redux
     const dispatch = useDispatch();
-    const { name, avtar, phone, email, refresh, jwt, errorMessage, isUpdateSuccess, isError, } = useSelector( userSelector );
+    const { id, name, avtar, phone, email, refresh, jwt, errorMessage, isUpdateSuccess, isError, } = useSelector( userSelector );
+    console.log("user id fetching: ", id)
 
     //main content
     const [updateName, setUpdateName] = useState(name)
@@ -23,7 +23,15 @@ export default function Dashboard(){
     const [updateEmail, setUpdateEmail] = useState(email)
     const [newPassword, setNewPassword] = useState("")
     const [confirmPassword, setconfirmPassword] = useState("")
-    let [isOpen, setIsOpen] = useState(false) //deleate account dialogue box
+    let [isOpen, setIsOpen] = useState(false) //delete account dialogue box
+    
+    // Image upload states
+    const [isImageUploadOpen, setIsImageUploadOpen] = useState(false)
+    const [selectedImage, setSelectedImage] = useState(null)
+    const [previewUrl, setPreviewUrl] = useState(null)
+    const [isDragging, setIsDragging] = useState(false)
+    const [isUploading, setIsUploading] = useState(false)
+    const fileInputRef = useRef(null)
 
     const updateProfileButton = (e)=>{
       e.preventDefault()
@@ -45,6 +53,7 @@ export default function Dashboard(){
       if (response.status == 200) { showSuccess(data.message); setNewPassword(''); setconfirmPassword('') }
       else showError(data.message)
     }
+
     const deleteAccount = async (e)=>{
       e.preventDefault()
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/delete-account`,{
@@ -63,6 +72,107 @@ export default function Dashboard(){
         location.replace('/')
       } else showError(data.message)
     }
+
+    // Image upload handlers
+    const handleImageSelect = (file) => {
+      if (file && file.type.startsWith('image/')) {
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        if (file.size > maxSize) {
+          showError('Image size should be less than 5MB');
+          return;
+        }
+        
+        setSelectedImage(file);
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setPreviewUrl(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        showError('Please select a valid image file');
+      }
+    };
+
+    const handleDragOver = (e) => {
+      e.preventDefault();
+      setIsDragging(true);
+    };
+
+    const handleDragLeave = (e) => {
+      e.preventDefault();
+      setIsDragging(false);
+    };
+
+    const handleDrop = (e) => {
+      e.preventDefault();
+      setIsDragging(false);
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        handleImageSelect(files[0]);
+      }
+    };
+
+    const handleFileInputChange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        handleImageSelect(file);
+      }
+    };
+
+    const handleUploadImage = async () => {
+      if (!selectedImage) return;
+      
+      setIsUploading(true);
+      
+      try {
+        const formData = new FormData();
+        formData.append('image', selectedImage);
+        formData.append("folder", "profile");
+        formData.append("customer_id", `${id}`);
+
+        
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/store-image`, {
+          method: 'POST',
+          headers: {
+            key: `${jwt}`,
+          },
+          body: formData,
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          showSuccess('Profile picture updated successfully!');
+          // Update the avatar in Redux store if needed
+          // dispatch(updateAvatar(data.avatarUrl));
+          setIsImageUploadOpen(false);
+          setSelectedImage(null);
+          setPreviewUrl(null);
+          location.reload();
+        } else {
+          showError(data.message || 'Failed to upload image');
+        }
+      } catch (error) {
+        showError('Error uploading image. Please try again.');
+        console.error('Upload error:', error);
+      } finally {
+        setIsUploading(false);
+      }
+    };
+
+    const resetImageUpload = () => {
+      setSelectedImage(null);
+      setPreviewUrl(null);
+      setIsDragging(false);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    };
+
+    const closeImageUpload = () => {
+      setIsImageUploadOpen(false);
+      resetImageUpload();
+    };
     
     useEffect(()=>{
       if (isError) showError(errorMessage)
@@ -73,29 +183,100 @@ export default function Dashboard(){
      return(
         <React.Fragment>
             <header className='py-10 px-12 h-64 flex flex-col md:flex-row justify-between items-center bg-sky-500'>
-                {/* Wavy Bottom Border */}
-                {/* <div className="absolute bottom-0 left-0 right-0">
-                    <svg 
-                    viewBox="0 0 1200 120" 
-                    fill="none" 
-                    className="w-full h-20"
-                    preserveAspectRatio="none"
-                    >
-                    <path 
-                        d="M0,60 C300,20 600,100 900,60 C1050,30 1150,80 1200,60 L1200,120 L0,120 Z" 
-                        fill="white"
-                    />
-                    </svg>
-                </div> */}
-
                 {/* Main Content */}
                 <figure className='flex fle-row space-x-2 items-center'>
-                    <span className='relative w-24 h-24 bg-black rounded-full border-2 border-black overflow-clip'><Image src={avtar || null} layout='fill' alt={`Avtar of ${name}`} draggable="false" /></span>
-                    <figcaption className='flex flex-col space-y-1'><label>Name: {name}</label><label>Phone: {phone}</label><label>Email: {email}</label></figcaption>
+                    <span className='relative w-24 h-24 bg-black rounded-full border-2 border-black overflow-clip group cursor-pointer' onClick={() => setIsImageUploadOpen(true)}>
+                        <Image src={avtar || '/default-avatar.png'} layout='fill' alt={`Avatar of ${name}`} draggable="false" />
+                        {/* Hover overlay */}
+                        <div className='absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition-all duration-300'>
+                            <RiCameraFill className='text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                        </div>
+                    </span>
+                    <figcaption className='flex flex-col space-y-1'>
+                        <label>Name: {name}</label>
+                        <label>Phone: {phone}</label>
+                        <label>Email: {email}</label>
+                    </figcaption>
                 </figure>
                 <button type="button" className="text-sky-500 h-12 bg-white font-semibold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={()=> {dispatch(logoutUser()); location.replace('/') }}>Log Out</button>
-            
             </header>
+
+            {/* Image Upload Dialog */}
+            <Dialog open={isImageUploadOpen} onClose={closeImageUpload} className="relative z-50">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex w-screen items-center justify-center p-4">
+                    <DialogPanel className="max-w-lg w-full space-y-4 border border-sky-500 bg-white rounded-lg p-6">
+                        <DialogTitle className="text-xl font-bold text-center text-gray-900">Update Profile Picture</DialogTitle>
+                        
+                        {!selectedImage ? (
+                            <div 
+                                className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors duration-300 ${
+                                    isDragging ? 'border-sky-500 bg-sky-50' : 'border-gray-300'
+                                }`}
+                                onDragOver={handleDragOver}
+                                onDragLeave={handleDragLeave}
+                                onDrop={handleDrop}
+                            >
+                                <RiUploadCloudFill className="mx-auto text-4xl text-gray-400 mb-4" />
+                                <p className="text-gray-600 mb-4">Drag and drop an image here, or</p>
+                                <button
+                                    onClick={() => fileInputRef.current?.click()}
+                                    className="bg-sky-500 text-white px-6 py-2 rounded-lg hover:bg-sky-600 transition-colors duration-300"
+                                >
+                                    Select from computer
+                                </button>
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleFileInputChange}
+                                    className="hidden"
+                                />
+                                <p className="text-xs text-gray-500 mt-2">PNG, JPG, GIF up to 5MB</p>
+                            </div>
+                        ) : (
+                            <div className="text-center">
+                                <div className="mb-4">
+                                    <img 
+                                        src={previewUrl} 
+                                        alt="Preview" 
+                                        className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-gray-300"
+                                    />
+                                </div>
+                                <p className="text-sm text-gray-600 mb-4">{selectedImage.name}</p>
+                                <div className="flex justify-center space-x-3">
+                                    <button
+                                        onClick={resetImageUpload}
+                                        className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-300"
+                                    >
+                                        Choose Different
+                                    </button>
+                                    <button
+                                        onClick={handleUploadImage}
+                                        disabled={isUploading}
+                                        className={`px-6 py-2 rounded-lg text-white transition-colors duration-300 ${
+                                            isUploading 
+                                                ? 'bg-gray-400 cursor-not-allowed' 
+                                                : 'bg-sky-500 hover:bg-sky-600'
+                                        }`}
+                                    >
+                                        {isUploading ? 'Uploading...' : 'Upload'}
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                        
+                        <div className="flex justify-end">
+                            <button
+                                onClick={closeImageUpload}
+                                className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors duration-300"
+                            >
+                                Cancel
+                            </button>
+                        </div>
+                    </DialogPanel>
+                </div>
+            </Dialog>
+
             <main className="flex w-full justify-center px-4 my-20 ">
                     <div className="w-full max-w-6xl">
                       <TabGroup>
@@ -149,7 +330,7 @@ export default function Dashboard(){
                                   <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center" onClick={updatePassword}>Change Password</button>
                                   <button type="submit" className="text-white bg-pink-700 hover:bg-pink-800 font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center" onClick={() => setIsOpen(true)}>Delete Account</button>
                                 </div>
-                                {/* Deleate Account Dialogue Box */}
+                                {/* Delete Account Dialogue Box */}
                                 <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
                                   <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
                                     <DialogPanel className="max-w-lg space-y-4 border border-sky-500 bg-sky-100 rounded-lg p-12">

@@ -101,7 +101,7 @@ export default function Nutrition({all}) {
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt={i.name} /> */}
                             <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt={i.name} draggable="false" /></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
-                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra == "No discount"? "" : i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
                                 <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
@@ -115,7 +115,7 @@ export default function Nutrition({all}) {
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt={i.name} /> */}
                             <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt={i.name} draggable="false"/></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
-                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra == "No discount"? "" : i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
                                 <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
@@ -129,7 +129,7 @@ export default function Nutrition({all}) {
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt={i.name} /> */}
                             <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt={i.name} draggable="false"/></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
-                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra == "No discount"? "" : i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
                                 <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
@@ -143,7 +143,7 @@ export default function Nutrition({all}) {
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt={i.name} /> */}
                             <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt={i.name} draggable="false"/></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
-                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra == "No discount"? "" : i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
                                 <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>
@@ -157,7 +157,7 @@ export default function Nutrition({all}) {
                             {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt={i.name} /> */}
                             <figure className='relative w-32 h-28 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg overflow-hidden'><Image fill objectFit='contain' src={i.images[0].url} alt={i.name} draggable="false"/></figure>
                             <div className="flex flex-col justify-between p-4 leading-normal">
-                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra}</p>
+                                <p className="mb-3 font-semibold text-blue-500">{i.discount_or_extra == "No discount"? "" : i.discount_or_extra}</p>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{i.name}</h5>
                                 <p className="mb-3 font-normal text-gray-900">{i.description}</p>
                                 <span className='flex flex-row items-center space-x-2.5'><p className="mb-3 font-normal text-gray-900">$ {i.price}</p><p className="mb-3 font-normal text-gray-900 line-through decoration-red-500 decoration-2">$ {i.old_price}</p></span>

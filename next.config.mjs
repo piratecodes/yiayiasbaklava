@@ -53,7 +53,7 @@ const nextConfig = {
         remotePatterns: [ { hostname: 'flowbite.com' }, { hostname: 'yiayiasbaklava.com' }, { hostname: 'admin.yiayiasbaklava.com' }, { hostname: 'api.yiayiasbaklava.com' }, { hostname: 'dummyimage.com' }, { hostname: 'images.unsplash.com' }, { hostname: "localhost" }, ]
     },
     devIndicators: {
-        position: 'top-right',
+        position: 'bottom-left',
     },
     generateBuildId: async () => {
         // You can, for example, get the latest git commit hash here
