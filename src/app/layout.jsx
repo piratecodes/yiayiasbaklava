@@ -1,7 +1,6 @@
 import localfont from "next/font/local"
 import Script from 'next/script'
 import NextTopLoader from 'nextjs-toploader';
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next"
 import "@/style/globals.css";
 
