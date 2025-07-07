@@ -51,12 +51,12 @@ const Footer = () => {
       {/* Bottom section with pink background */}
       <div className="bg-sky-100 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-black text-sm mb-4">© {new Date().getFullYear()} Yia Yia's Baklava. All rights reserved.</p>
+          <p className="text-black text-sm mb-4">© {new Date().getFullYear()} <Link href="/" className='hover:underline'>Yia Yia's Baklava</Link>. All rights reserved.</p>
           <div className="flex flex-row justify-center space-x-2.5 md:space-x-8 text-sm">
-            <Link href="#" className="text-black hover:text-gray-600">
+            <Link href="/privacy-policy" className="text-black hover:text-gray-600">
               Privacy policy
             </Link>
-            <Link href="#" className="text-black hover:text-gray-600">
+            <Link href="/terms-and-condition" className="text-black hover:text-gray-600">
               Terms and Conditions
             </Link>
           </div>

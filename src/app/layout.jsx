@@ -109,12 +109,21 @@ export const metadata = {
   }
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  userScalable: false,
+  // Also supported but less commonly used
+  // 
+}
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <script id="tag_manager_index" async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MeasurementId_ga}`} />
-        <script> {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_MeasurementId_ga}');`} </script>
+        <Script id="tag_manager" dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_MeasurementId_ga}'); `}} />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0"/> */}
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Home - Yia Yia&#039;s Baklava" />
@@ -135,7 +144,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content="A modern twist on a beloved classic. Our Chocolate Hazelnut Baklava features layers of crispy phyllo, a fragrant blend of cinnamon and walnuts, all enveloped" />
         <meta name="twitter:image" content="https://yiayiasbaklava.com/wp-content/uploads/2025/02/unnamed.webp" />
       </head>
-      <body className={`${sofia.className} antialiased scroll-smooth scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-sky-500 scrollbar-corner-sky-800 scrollbar-track-sky-200`}>
+      <body className={`${sofia.className} antialiased overflow-x-hidden scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-sky-500 scrollbar-corner-sky-800 scrollbar-track-sky-200`}>
         <Providers>
           <NextTopLoader   color="#00a6f4"   initialPosition={0.08}   crawlSpeed={200}   height={3}   crawl={true}   showSpinner={false}   easing="ease"   speed={200}   shadow="0 0 10px #f1a4c7,0 0 5px #f1a4c7" />
           <Nav />
