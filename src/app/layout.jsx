@@ -1,6 +1,7 @@
 import localfont from "next/font/local"
 import Script from 'next/script'
 import NextTopLoader from 'nextjs-toploader';
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next"
 import "@/style/globals.css";
 
@@ -113,6 +114,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <Script id="tag_manager_index" async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MeasurementId_ga}`} />
+        <Script id="tag_manager" dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_MeasurementId_ga}'); `}} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Home - Yia Yia&#039;s Baklava" />
